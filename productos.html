@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos — Shake&Go</title>
+  <meta name="description" content="Descubre todos nuestros batidos naturales. Sabores del mundo, ingredientes reales. Elige tu favorito y recíbelo en casa en 24h.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥤</text></svg>">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header" role="banner">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="Shake&Go inicio">
+      <img src="assets/img/logo1.png" alt="Shake&Go logo" class="logo-img" onerror="this.style.display='none'">
+      <span class="logo-text">Shake<span>&</span>Go</span>
+    </a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="header-actions">
+      <button class="cart-btn" data-open-cart aria-label="Abrir carrito">
+        🛒 Carrito
+        <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+      </button>
+      <button class="hamburger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" aria-label="Menú móvil">
+  <a href="index.html">Inicio</a>
+  <a href="productos.html">Productos</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="contacto.html">Contacto</a>
+</nav>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero" aria-label="Catálogo de productos">
+  <div class="container">
+    <div class="page-hero-eyebrow">Nuestros batidos</div>
+    <h1>Elige tu <em style="font-style:italic;color:var(--color-naranja)">sabor</em> favorito</h1>
+    <p>Seis recetas únicas, seis países, seis viajes. Todos elaborados con frutas reales y listos para ti.</p>
+  </div>
+</section>
+
+<!-- ============ SERVICIOS STRIP ============ -->
+<section class="section-servicios" aria-label="Servicios">
+  <div class="container">
+    <div class="servicios-strip">
+      <div class="servicio-item"><span class="ico"></span><span><strong>Cold-chain 2°C–8°C</strong> · Siempre frescos</span></div>
+      <div class="servicio-item"><span class="ico"></span><span><strong>Pedidos antes 13:00h</strong> · Envío el mismo día</span></div>
+      <div class="servicio-item"><span class="ico"></span><span><strong>Garantía de llegada perfecta</strong> · Sin preguntas</span></div>
+      <div class="servicio-item"><span class="ico"></span><span><strong>21 días de vida útil</strong> mínima garantizada</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FILTROS ============ -->
+<div class="filter-bar" role="navigation" aria-label="Filtros de producto">
+  <div class="container">
+    <div class="filter-bar-inner">
+      <button class="filter-btn active" data-filter="todos">Todos</button>
+      <button class="filter-btn" data-filter="energizante">Energizantes</button>
+      <button class="filter-btn" data-filter="detox">Detox &amp; Verde</button>
+      <button class="filter-btn" data-filter="vitaminas">Vitaminas</button>
+      <button class="filter-btn" data-filter="proteina">Proteicos</button>
+      <button class="filter-btn" data-filter="tropical">Tropicales</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CATÁLOGO ============ -->
+<main class="catalogo" id="catalogo" aria-label="Catálogo de batidos">
+  <div class="container">
+    <div class="productos-grid">
+
+      <!-- 1. Berry Fusion -->
+      <article class="product-card-full" data-id="berry-fusion" data-categoria="energizante">
+        <div class="product-img-wrap">
+          <img src="BerryFusion.png" alt="Berry Fusion — frambuesas, arándanos y plátano" loading="lazy">
+          <span class="product-badge">Best Seller</span>
+          <span class="product-pais">🇫🇷 Francia</span>
+        </div>
+        <div class="product-info">
+          <div class="product-categoria">Energizante</div>
+          <div class="stars-row">
+            <div class="stars" aria-label="5 estrellas">★★★★★</div>
+            <span class="stars-count">(142)</span>
+          </div>
+          <h2 class="product-name">Shake&amp;Go: Berry Fusion</h2>
+          <p class="product-desc">Frambuesas silvestres, arándanos y plátano ecológico. Inspirado en los mercados de Provenza. Un explosión de antioxidantes que sabe a verano europeo. <strong>En Stock · Envío frío 24h</strong></p>
+
+          <div style="margin-bottom:0.8rem">
+            <div style="font-size:0.76rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-gris-oscuro);margin-bottom:0.5rem">Elige tu formato:</div>
+            <div class="pack-selector">
+              <button class="pack-btn active" data-pack="1 unidad" data-precio="3.50" data-unidad="por unidad (IVA inc.)">
+                SINGLE<br><small>3,50€</small>
+              </button>
+              <button class="pack-btn" data-pack="6 unidades" data-precio="19.00" data-unidad="6 uds · 3,17€/ud">
+                <span class="pack-badge-pill">MÁS VENDIDO</span>
+                6-PACK<br><small>19,00€</small><span class="pack-label">= 3,17€/ud</span>
+              </button>
+              <button class="pack-btn" data-pack="12 unidades" data-precio="35.00" data-unidad="12 uds · 2,92€/ud">
+                12-PACK<br><small>35,00€</small><span class="pack-label">−15% ahorro</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="product-footer">
+            <div class="product-precio">
+              <span class="product-precio-valor">3,50€</span>
+              <span class="product-precio-unidad">por unidad (IVA inc.)</span>
+            </div>
+            <button class="btn-add-cart" data-id="berry-fusion" data-nombre="Berry Fusion" data-precio="3.50" aria-label="Añadir Berry Fusion al carrito">
+              + Añadir al carrito
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Green Boost -->
+      <article class="product-card-full" data-id="green-boost" data-categoria="detox">
+        <div class="product-img-wrap">
+          <img src="GreenBoost.png" alt="Green Boost — kiwi, moras y espinacas" loading="lazy">
+          <span class="product-badge verde">Detox</span>
+          <span class="product-pais">🇯🇵 Japón</span>
+        </div>
+        <div class="product-info">
+          <div class="product-categoria">Detox &amp; Verde</div>
+          <div class="stars-row">
+            <div class="stars" aria-label="5 estrellas">★★★★★</div>
+            <span class="stars-count">(98)</span>
+          </div>
+          <h2 class="product-name">Shake&amp;Go: Green Boost</h2>
+          <p class="product-desc">Kiwi, moras, arándanos y espinacas baby. Inspirado en la filosofía wabi-sabi del equilibrio. Verde puro, intenso, con toque dulce de frutas del bosque. <strong>En Stock · Envío frío 24h</strong></p>
+
+          <div style="margin-bottom:0.8rem">
+            <div style="font-size:0.76rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-gris-oscuro);margin-bottom:0.5rem">Elige tu formato:</div>
+            <div class="pack-selector">
+              <button class="pack-btn active" data-pack="1 unidad" data-precio="3.50" data-unidad="por unidad (IVA inc.)">SINGLE<br><small>3,50€</small></button>
+              <button class="pack-btn" data-pack="6 unidades" data-precio="19.00" data-unidad="6 uds · 3,17€/ud">
+                <span class="pack-badge-pill">MÁS VENDIDO</span>6-PACK<br><small>19,00€</small><span class="pack-label">= 3,17€/ud</span>
+              </button>
+              <button class="pack-btn" data-pack="12 unidades" data-precio="35.00" data-unidad="12 uds · 2,92€/ud">12-PACK<br><small>35,00€</small><span class="pack-label">−15% ahorro</span></button>
+            </div>
+          </div>
+
+          <div class="product-footer">
+            <div class="product-precio">
+              <span class="product-precio-valor">3,50€</span>
+              <span class="product-precio-unidad">por unidad (IVA inc.)</span>
+            </div>
+            <button class="btn-add-cart" data-id="green-boost" data-nombre="Green Boost" data-precio="3.50">+ Añadir al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Golden Sunrise -->
+      <article class="product-card-full" data-id="golden-sunrise" data-categoria="vitaminas">
+        <div class="product-img-wrap">
+          <img src="GoldenSunrise.png" alt="Golden Sunrise — naranja, mango y chía" loading="lazy">
+          <span class="product-badge azul">Vitamina C</span>
+          <span class="product-pais">🇲🇦 Marruecos</span>
+        </div>
+        <div class="product-info">
+          <div class="product-categoria">Vitaminas</div>
+          <div class="stars-row">
+            <div class="stars" aria-label="4 estrellas">★★★★☆</div>
+            <span class="stars-count">(76)</span>
+          </div>
+          <h2 class="product-name">Shake&amp;Go: Golden Sunrise</h2>
+          <p class="product-desc">Naranja Valencia, mango y semillas de chía. El sabor del amanecer en los zocos marroquíes. Vitamina C pura y energía natural para comenzar el día. <strong>En Stock · Envío frío 24h</strong></p>
+
+          <div style="margin-bottom:0.8rem">
+            <div style="font-size:0.76rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-gris-oscuro);margin-bottom:0.5rem">Elige tu formato:</div>
+            <div class="pack-selector">
+              <button class="pack-btn active" data-pack="1 unidad" data-precio="3.50" data-unidad="por unidad (IVA inc.)">SINGLE<br><small>3,50€</small></button>
+              <button class="pack-btn" data-pack="6 unidades" data-precio="19.00" data-unidad="6 uds · 3,17€/ud">
+                <span class="pack-badge-pill">MÁS VENDIDO</span>6-PACK<br><small>19,00€</small><span class="pack-label">= 3,17€/ud</span>
+              </button>
+              <button class="pack-btn" data-pack="12 unidades" data-precio="35.00" data-unidad="12 uds · 2,92€/ud">12-PACK<br><small>35,00€</small><span class="pack-label">−15% ahorro</span></button>
+            </div>
+          </div>
+
+          <div class="product-footer">
+            <div class="product-precio">
+              <span class="product-precio-valor">3,50€</span>
+              <span class="product-precio-unidad">por unidad (IVA inc.)</span>
+            </div>
+            <button class="btn-add-cart" data-id="golden-sunrise" data-nombre="Golden Sunrise" data-precio="3.50">+ Añadir al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. Nordic Berry -->
+      <article class="product-card-full" data-id="nordic-berry" data-categoria="proteina">
+        <div class="product-img-wrap">
+          <img src="NordicBerry.png" alt="Nordic Berry — frambuesas y arándanos rojos" loading="lazy">
+          <span class="product-badge">Nuevo</span>
+          <span class="product-pais">🇸🇪 Suecia</span>
+        </div>
+        <div class="product-info">
+          <div class="product-categoria">Proteico</div>
+          <div class="stars-row">
+            <div class="stars" aria-label="5 estrellas">★★★★★</div>
+            <span class="stars-count">(54)</span>
+          </div>
+          <h2 class="product-name">Shake&amp;Go: Nordic Berry</h2>
+          <p class="product-desc">Frambuesas, arándanos rojos y romero fresco. Suave, cremoso y lleno de antioxidantes escandinavos. Un abrazo del bosque nórdico en cada sorbo. <strong>En Stock · Envío frío 24h</strong></p>
+
+          <div style="margin-bottom:0.8rem">
+            <div style="font-size:0.76rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-gris-oscuro);margin-bottom:0.5rem">Elige tu formato:</div>
+            <div class="pack-selector">
+              <button class="pack-btn active" data-pack="1 unidad" data-precio="3.50" data-unidad="por unidad (IVA inc.)">SINGLE<br><small>3,50€</small></button>
+              <button class="pack-btn" data-pack="6 unidades" data-precio="19.00" data-unidad="6 uds · 3,17€/ud">
+                <span class="pack-badge-pill">MÁS VENDIDO</span>6-PACK<br><small>19,00€</small><span class="pack-label">= 3,17€/ud</span>
+              </button>
+              <button class="pack-btn" data-pack="12 unidades" data-precio="35.00" data-unidad="12 uds · 2,92€/ud">12-PACK<br><small>35,00€</small><span class="pack-label">−15% ahorro</span></button>
+            </div>
+          </div>
+
+          <div class="product-footer">
+            <div class="product-precio">
+              <span class="product-precio-valor">3,50€</span>
+              <span class="product-precio-unidad">por unidad (IVA inc.)</span>
+            </div>
+            <button class="btn-add-cart" data-id="nordic-berry" data-nombre="Nordic Berry" data-precio="3.50">+ Añadir al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. Tropical Mango -->
+      <article class="product-card-full" data-id="tropical-mango" data-categoria="tropical">
+        <div class="product-img-wrap">
+          <img src="TropicalMango.png" alt="Tropical Mango — mango, naranja y cúrcuma" loading="lazy">
+          <span class="product-badge" style="background:var(--color-azul)">Tropical</span>
+          <span class="product-pais">🇧🇷 Brasil</span>
+        </div>
+        <div class="product-info">
+          <div class="product-categoria">Tropical</div>
+          <div class="stars-row">
+            <div class="stars" aria-label="5 estrellas">★★★★★</div>
+            <span class="stars-count">(87)</span>
+          </div>
+          <h2 class="product-name">Shake&amp;Go: Tropical Mango</h2>
+          <p class="product-desc">Mango Alfonso, naranja y una pizca de cúrcuma. El calor del Nordeste brasileño embotellado. Refrescante, tropical y con propiedades antiinflamatorias naturales. <strong>En Stock · Envío frío 24h</strong></p>
+
+          <div style="margin-bottom:0.8rem">
+            <div style="font-size:0.76rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-gris-oscuro);margin-bottom:0.5rem">Elige tu formato:</div>
+            <div class="pack-selector">
+              <button class="pack-btn active" data-pack="1 unidad" data-precio="3.50" data-unidad="por unidad (IVA inc.)">SINGLE<br><small>3,50€</small></button>
+              <button class="pack-btn" data-pack="6 unidades" data-precio="19.00" data-unidad="6 uds · 3,17€/ud">
+                <span class="pack-badge-pill">MÁS VENDIDO</span>6-PACK<br><small>19,00€</small><span class="pack-label">= 3,17€/ud</span>
+              </button>
+              <button class="pack-btn" data-pack="12 unidades" data-precio="35.00" data-unidad="12 uds · 2,92€/ud">12-PACK<br><small>35,00€</small><span class="pack-label">−15% ahorro</span></button>
+            </div>
+          </div>
+
+          <div class="product-footer">
+            <div class="product-precio">
+              <span class="product-precio-valor">3,50€</span>
+              <span class="product-precio-unidad">por unidad (IVA inc.)</span>
+            </div>
+            <button class="btn-add-cart" data-id="tropical-mango" data-nombre="Tropical Mango" data-precio="3.50">+ Añadir al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. Caribbean Dream -->
+      <article class="product-card-full" data-id="caribbean-dream" data-categoria="tropical">
+        <div class="product-img-wrap">
+          <img src="CaribbeanDream.png" alt="Caribbean Dream — plátano, canela y nata" loading="lazy">
+          <span class="product-badge" style="background:#8B5CF6">Premium</span>
+          <span class="product-pais">🇹🇭 Tailandia</span>
+        </div>
+        <div class="product-info">
+          <div class="product-categoria">Tropical</div>
+          <div class="stars-row">
+            <div class="stars" aria-label="4 estrellas y media">★★★★½</div>
+            <span class="stars-count">(63)</span>
+          </div>
+          <h2 class="product-name">Shake&amp;Go: Caribbean Dream</h2>
+          <p class="product-desc">Plátano de Canarias, canela de Ceilán y un toque de nata. Cremoso, cálido, reconfortante. Inspirado en los mercados flotantes de Bangkok. Un lujo hecho smoothie. <strong>En Stock · Envío frío 24h</strong></p>
+
+          <div style="margin-bottom:0.8rem">
+            <div style="font-size:0.76rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-gris-oscuro);margin-bottom:0.5rem">Elige tu formato:</div>
+            <div class="pack-selector">
+              <button class="pack-btn active" data-pack="1 unidad" data-precio="3.50" data-unidad="por unidad (IVA inc.)">SINGLE<br><small>3,50€</small></button>
+              <button class="pack-btn" data-pack="6 unidades" data-precio="19.00" data-unidad="6 uds · 3,17€/ud">
+                <span class="pack-badge-pill">MÁS VENDIDO</span>6-PACK<br><small>19,00€</small><span class="pack-label">= 3,17€/ud</span>
+              </button>
+              <button class="pack-btn" data-pack="12 unidades" data-precio="35.00" data-unidad="12 uds · 2,92€/ud">12-PACK<br><small>35,00€</small><span class="pack-label">−15% ahorro</span></button>
+            </div>
+          </div>
+
+          <div class="product-footer">
+            <div class="product-precio">
+              <span class="product-precio-valor">3,50€</span>
+              <span class="product-precio-unidad">por unidad (IVA inc.)</span>
+            </div>
+            <button class="btn-add-cart" data-id="caribbean-dream" data-nombre="Caribbean Dream" data-precio="3.50">+ Añadir al carrito</button>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /productos-grid -->
+  </div>
+</main>
+
+<!-- ============ SECCIÓN RESEÑAS ============ -->
+<section style="padding:var(--spacing-xl) 0;background:var(--color-crema)" aria-labelledby="resenas-heading">
+  <div class="container">
+    <div class="section-tag">Opiniones de clientes</div>
+    <h2 class="section-heading" id="resenas-heading">Opiniones de clientes (142)</h2>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:start;margin-top:2.5rem;flex-wrap:wrap">
+      <div style="text-align:center;padding:2rem;background:white;border-radius:var(--radius-lg);border:1px solid var(--color-borde);min-width:160px">
+        <div style="font-family:var(--font-display);font-size:4rem;font-weight:900;line-height:1">4.8</div>
+        <div style="color:#6B6B6B;font-size:0.78rem;margin-bottom:0.5rem">/5</div>
+        <div class="stars" style="justify-content:center;font-size:1.1rem">★★★★★</div>
+        <div style="margin-top:1.2rem;display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;align-items:center;gap:8px;font-size:0.78rem">
+            <span>5★</span>
+            <div style="flex:1;height:6px;background:var(--color-gris-claro);border-radius:3px;overflow:hidden"><div style="width:72%;height:100%;background:var(--color-naranja);border-radius:3px"></div></div>
+            <span style="color:var(--color-gris-medio)">102</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:0.78rem">
+            <span>4★</span>
+            <div style="flex:1;height:6px;background:var(--color-gris-claro);border-radius:3px;overflow:hidden"><div style="width:20%;height:100%;background:var(--color-naranja);border-radius:3px"></div></div>
+            <span style="color:var(--color-gris-medio)">28</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:0.78rem">
+            <span>3★</span>
+            <div style="flex:1;height:6px;background:var(--color-gris-claro);border-radius:3px;overflow:hidden"><div style="width:6%;height:100%;background:#D1D5DB;border-radius:3px"></div></div>
+            <span style="color:var(--color-gris-medio)">8</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:0.78rem">
+            <span>2★</span>
+            <div style="flex:1;height:6px;background:var(--color-gris-claro);border-radius:3px;overflow:hidden"><div style="width:2%;height:100%;background:#D1D5DB;border-radius:3px"></div></div>
+            <span style="color:var(--color-gris-medio)">3</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:0.78rem">
+            <span>1★</span>
+            <div style="flex:1;height:6px;background:var(--color-gris-claro);border-radius:3px;overflow:hidden"><div style="width:1%;height:100%;background:#D1D5DB;border-radius:3px"></div></div>
+            <span style="color:var(--color-gris-medio)">1</span>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1.2rem">
+        <div style="background:white;border-radius:var(--radius-md);padding:1.5rem;border:1px solid var(--color-borde)">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:0.8rem">
+            <div style="width:38px;height:38px;border-radius:50%;background:#FFE0D0;color:var(--color-naranja);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem">MG</div>
+            <div>
+              <strong style="font-size:0.88rem">Marta G.</strong>
+              <span style="font-size:0.72rem;color:var(--color-gris-medio);margin-left:8px">✅ Compra Verificada</span>
+              <div class="stars" style="font-size:0.8rem">★★★★★</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem;line-height:1.65;color:var(--color-gris-oscuro)">¡Increíble el de Matcha! Nunca me había enamorado tanto de un batido. La textura es cremosa y el sabor auténtico. ¡Me ha subido una foto para subirla a Pinterest!</p>
+        </div>
+        <div style="background:white;border-radius:var(--radius-md);padding:1.5rem;border:1px solid var(--color-borde)">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:0.8rem">
+            <div style="width:38px;height:38px;border-radius:50%;background:#D0EDFF;color:var(--color-azul);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem">JA</div>
+            <div>
+              <strong style="font-size:0.88rem">Juan Antonio D.</strong>
+              <span style="font-size:0.72rem;color:var(--color-gris-medio);margin-left:8px">✅ Compra Verificada</span>
+              <div class="stars" style="font-size:0.8rem">★★★★★</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem;line-height:1.65;color:var(--color-gris-oscuro)">El pack de 6 llegó perfectamente. Cajas isotérmicas impecables, todos los batidos a temperatura perfecta. El Berry Fusion es mi nuevo favorito para después del gym. Repito seguro.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" aria-label="Pie de página">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text" style="font-family:'Playfair Display',serif;font-size:1.5rem;color:white;font-weight:900">Shake<span style="color:#F4511E">&</span>Go</span>
+        <p>Batidos naturales con sabores del mundo. Salud, sabor y comodidad en cada botella. Envío refrigerado a toda España.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Productos</h4>
+        <ul>
+          <li><a href="productos.html">Todos los sabores</a></li>
+          <li><a href="productos.html?filtro=energizante">Energizantes</a></li>
+          <li><a href="productos.html?filtro=detox">Detox &amp; Verde</a></li>
+          <li><a href="productos.html?filtro=proteina">Proteicos</a></li>
+          <li><a href="productos.html?filtro=vitaminas">Vitaminas</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>La marca</h4>
+        <ul>
+          <li><a href="nosotros.html">Sobre nosotros</a></li>
+          <li><a href="nosotros.html#valores">Nuestros valores</a></li>
+          <li><a href="nosotros.html#mision">Misión y visión</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ayuda</h4>
+        <ul>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="mailto:shakeandgoes@gmail.com">shakeandgoes@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Shake&amp;Go. Todos los derechos reservados. · www.shakeandgo.es</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ CARRITO ============ -->
+<div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+<aside class="cart-panel" id="cart-panel" role="complementary" aria-label="Carrito de la compra">
+  <div class="cart-header">
+    <div><h2>Tu carrito</h2><p class="cart-header-sub">Revisa tu selección</p></div>
+    <button class="cart-close" id="cart-close" aria-label="Cerrar carrito">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <div class="cart-empty" id="cart-empty" style="display:flex">
+      <div class="cart-empty-icon"></div>
+      <p>Tu carrito está vacío.<br>¡Añade tus sabores favoritos!</p>
+      <a href="productos.html" class="btn btn-primary" style="margin-top:0.5rem">Ver productos</a>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="cart-subtotal-val">0,00€</span></div>
+    <div class="cart-total-row"><span>Total</span><span id="cart-total">0,00€</span></div>
+    <div class="cart-envio">Envío gratis en pedidos +20€</div>
+    <div class="cart-footer-btns">
+      <button class="btn-checkout" id="btn-checkout">Finalizar pedido →</button>
+      <button class="btn-seguir" id="btn-seguir-comprando">← Seguir comprando</button>
+    </div>
+  </div>
+</aside>
+
+<script src="main.js"></script>
+<script src="carrito.js"></script>
+</body>
+</html>

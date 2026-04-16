@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shake&Go — Prueba y viaja con los sabores</title>
+  <meta name="description" content="Batidos naturales con sabores de todo el mundo. Ingredientes reales, frutas frescas, listos para llevar. Envío refrigerado en 24h.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥤</text></svg>">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header" role="banner">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="Shake&Go inicio">
+      <img src="assets/img/logo1.png" alt="Shake&Go logo" class="logo-img" onerror="this.style.display='none'">
+      <span class="logo-text">Shake<span>&</span>Go</span>
+    </a>
+
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="cart-btn" data-open-cart aria-label="Abrir carrito">
+        🛒 Carrito
+        <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+      </button>
+      <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Menú móvil -->
+<nav class="mobile-nav" aria-label="Menú móvil">
+  <a href="index.html">Inicio</a>
+  <a href="productos.html">Productos</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="contacto.html">Contacto</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-label="Presentación de marca">
+  <div class="hero-content">
+    <div class="hero-badge"> Sabores de todo el mundo</div>
+    <h1 class="hero-title">
+      <span class="block">Disfruta el</span>
+      <span class="block italic">mundo</span>
+      <span class="block">en cada sorbo.</span>
+    </h1>
+    <p class="hero-sub">
+      Batidos naturales con frutas reales, inspirados en culturas de todos los rincones del planeta. Sanos, prácticos y listos para cuando tú lo necesitas.
+    </p>
+    <div class="hero-ctas">
+      <a href="productos.html" class="btn btn-primary">Ver todos los sabores →</a>
+      <a href="nosotros.html" class="btn btn-secondary">Nuestra historia</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <strong>100%</strong>
+        <span>Ingredientes naturales</span>
+      </div>
+      <div class="hero-stat">
+        <strong>24h</strong>
+        <span>Envío refrigerado</span>
+      </div>
+      <div class="hero-stat">
+        <strong>+6</strong>
+        <span>Sabores únicos</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual" aria-hidden="true">
+    <div class="hero-bg-circle hero-bg-circle-1"></div>
+    <div class="hero-bg-circle hero-bg-circle-2"></div>
+    <div class="hero-float-tag hero-float-tag-1">
+      <span style="color:#6DBF67">●</span>
+      <span>Sin azúcares añadidos</span>
+    </div>
+    <div class="hero-float-tag hero-float-tag-2">
+      <span style="color:#F4511E">●</span>
+      <span>Envío en frío 24h</span>
+    </div>
+    <div class="hero-img-wrap">
+      <img class="hero-img-main" src="GreenBoost.png" alt="Green Boost — batido verde con kiwi y moras" loading="eager">
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICIOS STRIP ============ -->
+<section class="section-servicios" aria-label="Servicios">
+  <div class="container">
+    <div class="servicios-strip">
+      <div class="servicio-item">
+        <span class="ico"></span>
+        <span><strong>Envío refrigerado</strong> · Cold-chain 2°C–8°C</span>
+      </div>
+      <div class="servicio-item">
+        <span class="ico"></span>
+        <span><strong>Garantía de llegada perfecta</strong> · Cero riesgos</span>
+      </div>
+      <div class="servicio-item">
+        <span class="ico"></span>
+        <span><strong>Precinto Fresh-Lock</strong> · Sellado de seguridad</span>
+      </div>
+      <div class="servicio-item">
+        <span class="ico"></span>
+        <span><strong>Packaging sostenible</strong> · 100% reciclable</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROPUESTA DE VALOR ============ -->
+<section class="section-valores" aria-labelledby="valores-heading">
+  <div class="container">
+    <div class="section-tag">Por qué Shake&amp;Go</div>
+    <h2 class="section-heading" id="valores-heading">
+      Salud, sabor y comodidad.<br>Sin concesiones.
+    </h2>
+    <p class="section-subheading">
+      No somos otro batido del súper. Cada Shake&amp;Go está hecho con frutas reales, inspirado en un país diferente, y llega a tu puerta listo para disfrutar.
+    </p>
+    <div class="valores-grid">
+      <div class="valor-card">
+        <div class="valor-icon">🌍</div>
+        <h3>Sabores del mundo</h3>
+        <p>Cada receta es un viaje: frutas locales e internacionales que evocan los sabores auténticos de diferentes culturas.</p>
+      </div>
+      <div class="valor-card">
+        <div class="valor-icon">🍃</div>
+        <h3>Ingredientes reales</h3>
+        <p>Sin concentrados, sin colorantes, sin azúcares añadidos. Solo fruta, nutrición y honestidad en cada botella.</p>
+      </div>
+      <div class="valor-card">
+        <div class="valor-icon">⚡</div>
+        <h3>Listos para llevar</h3>
+        <p>Pensados para el ritmo de vida actual. Ábrelos, disfrútalos y sigue con tu día. Sin batidoras ni complicaciones.</p>
+      </div>
+      <div class="valor-card">
+        <div class="valor-icon">♻️</div>
+        <h3>Compromiso verde</h3>
+        <p>Packaging 100% reciclable, cadena logística optimizada y colaboración con proveedores locales sostenibles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTOS DESTACADOS ============ -->
+<section class="section-productos" aria-labelledby="prod-heading">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-tag">Nuestro catálogo</div>
+        <h2 class="section-heading" id="prod-heading">Los más pedidos</h2>
+      </div>
+      <a href="productos.html" class="btn btn-secondary" style="flex-shrink:0">Ver todos →</a>
+    </div>
+    <div class="productos-grid">
+
+      <!-- Berry Fusion -->
+      <article class="product-card" data-id="berry-fusion" data-categoria="energizante">
+        <div class="product-img-wrap">
+          <img src="BerryFusion.png" alt="Berry Fusion — batido de frambuesa y arándanos" loading="lazy">
+          <span class="product-badge">Best Seller</span>
+          <span class="product-pais">🇫🇷 Francia</span>
+        </div>
+        <div class="product-info">
+          <div class="product-categoria">Energizante</div>
+          <div class="stars-row">
+            <div class="stars" aria-label="5 estrellas">★★★★★</div>
+            <span class="stars-count">(142)</span>
+          </div>
+          <h3 class="product-name">Berry Fusion</h3>
+          <p class="product-desc">Frambuesas, arándanos y plátano. Un bombazo de antioxidantes que sabe a verano europeo. Energía real sin artificios.</p>
+          <div class="product-footer">
+            <div class="product-precio">
+              <span class="product-precio-valor">3,50€</span>
+              <span class="product-precio-unidad">por unidad (IVA inc.)</span>
+            </div>
+            <button class="btn-add-cart"
+              data-id="berry-fusion"
+              data-nombre="Berry Fusion"
+              data-precio="3.50"
+              aria-label="Añadir Berry Fusion al carrito">
+              + Añadir
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Green Boost -->
+      <article class="product-card" data-id="green-boost" data-categoria="detox">
+        <div class="product-img-wrap">
+          <img src="GreenBoost.png" alt="Green Boost — batido verde detox" loading="lazy">
+          <span class="product-badge verde">Detox</span>
+          <span class="product-pais">🇯🇵 Japón</span>
+        </div>
+        <div class="product-info">
+          <div class="product-categoria">Detox &amp; Verde</div>
+          <div class="stars-row">
+            <div class="stars" aria-label="5 estrellas">★★★★★</div>
+            <span class="stars-count">(98)</span>
+          </div>
+          <h3 class="product-name">Green Boost</h3>
+          <p class="product-desc">Kiwi, moras y espinacas. Inspirado en la filosofía japonesa del bienestar. Verde puro, sabor intenso, cuerpo agradecido.</p>
+          <div class="product-footer">
+            <div class="product-precio">
+              <span class="product-precio-valor">3,50€</span>
+              <span class="product-precio-unidad">por unidad (IVA inc.)</span>
+            </div>
+            <button class="btn-add-cart"
+              data-id="green-boost"
+              data-nombre="Green Boost"
+              data-precio="3.50"
+              aria-label="Añadir Green Boost al carrito">
+              + Añadir
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Golden Sunrise -->
+      <article class="product-card" data-id="golden-sunrise" data-categoria="vitaminas">
+        <div class="product-img-wrap">
+          <img src="GoldenSunrise.png" alt="Golden Sunrise — batido naranja con naranja y mango" loading="lazy">
+          <span class="product-badge azul">Vitamina C</span>
+          <span class="product-pais">🇲🇦 Marruecos</span>
+        </div>
+        <div class="product-info">
+          <div class="product-categoria">Vitaminas</div>
+          <div class="stars-row">
+            <div class="stars" aria-label="4 estrellas y media">★★★★½</div>
+            <span class="stars-count">(76)</span>
+          </div>
+          <h3 class="product-name">Golden Sunrise</h3>
+          <p class="product-desc">Naranja, mango y semillas de chía. El sabor del amanecer marroquí en un sorbo. Vitamina C pura para empezar el día.</p>
+          <div class="product-footer">
+            <div class="product-precio">
+              <span class="product-precio-valor">3,50€</span>
+              <span class="product-precio-unidad">por unidad (IVA inc.)</span>
+            </div>
+            <button class="btn-add-cart"
+              data-id="golden-sunrise"
+              data-nombre="Golden Sunrise"
+              data-precio="3.50"
+              aria-label="Añadir Golden Sunrise al carrito">
+              + Añadir
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Nordic Berry -->
+      <article class="product-card" data-id="nordic-berry" data-categoria="proteina">
+        <div class="product-img-wrap">
+          <img src="NordicBerry.png" alt="Nordic Berry — batido lila con frambuesas y arándanos rojos" loading="lazy">
+          <span class="product-badge">Nuevo</span>
+          <span class="product-pais">🇸🇪 Suecia</span>
+        </div>
+        <div class="product-info">
+          <div class="product-categoria">Proteico</div>
+          <div class="stars-row">
+            <div class="stars" aria-label="4 estrellas y media">★★★★★</div>
+            <span class="stars-count">(54)</span>
+          </div>
+          <h3 class="product-name">Nordic Berry</h3>
+          <p class="product-desc">Frambuesas, arándanos rojos y romero. Inspirado en los bosques escandinavos. Suave, cremoso y lleno de antioxidantes nórdicos.</p>
+          <div class="product-footer">
+            <div class="product-precio">
+              <span class="product-precio-valor">3,50€</span>
+              <span class="product-precio-unidad">por unidad (IVA inc.)</span>
+            </div>
+            <button class="btn-add-cart"
+              data-id="nordic-berry"
+              data-nombre="Nordic Berry"
+              data-precio="3.50"
+              aria-label="Añadir Nordic Berry al carrito">
+              + Añadir
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOBRE LA MARCA ============ -->
+<section class="section-marca" aria-labelledby="marca-heading">
+  <div class="container">
+    <div class="marca-inner">
+      <div class="marca-content">
+        <div class="section-tag">Nuestra esencia</div>
+        <h2 class="section-heading" id="marca-heading">
+          Cada sorbo es<br>un <span class="italic">viaje</span>.
+        </h2>
+        <p>
+          En Shake&amp;Go creemos que cuidarse no debería ser aburrido. Por eso creamos batidos que conectan culturas, sabores y personas, usando ingredientes de los mercados más vibrantes del mundo.
+        </p>
+        <p>
+          Detrás de cada receta hay una historia, un país, una tradición. Somos la marca que une la salud con la curiosidad por el mundo.
+        </p>
+        <a href="nosotros.html" class="btn btn-outline-white">Conoce nuestra historia →</a>
+      </div>
+      <div class="marca-visual" aria-hidden="true">
+        <div class="marca-img-block">
+          <img src="TropicalMango.png" alt="Tropical Mango">
+        </div>
+        <div class="marca-img-block">
+          <img src="CaribbeanDream.png" alt="Caribbean Dream">
+        </div>
+        <div class="marca-img-block">
+          <img src="BerryFusion.png" alt="Berry Fusion">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIOS ============ -->
+<section class="section-testimonios" aria-labelledby="testimonios-heading">
+  <div class="container">
+    <div class="section-tag">Lo que dicen nuestros clientes</div>
+    <h2 class="section-heading" id="testimonios-heading">Opiniones reales. Sin filtros.</h2>
+    <div class="testimonios-grid">
+
+      <article class="testimonio-card">
+        <div class="testimonio-header">
+          <div class="testimonio-avatar" style="background:#FFE0D0;color:#F4511E">MG</div>
+          <div class="testimonio-info">
+            <strong>Marta G.</strong>
+            <span>Valencia · hace 2 semanas</span>
+            <div class="testimonio-verified">✅ Compra Verificada</div>
+          </div>
+        </div>
+        <div class="stars" style="margin-bottom:0.8rem" aria-label="5 estrellas">★★★★★</div>
+        <p class="testimonio-text">El Green Boost es increíble. Llevo tres semanas tomándolo por las mañanas y noto la diferencia en mi energía. ¡La textura es perfecta!</p>
+      </article>
+
+      <article class="testimonio-card">
+        <div class="testimonio-header">
+          <div class="testimonio-avatar" style="background:#D0EDFF;color:#29ABE2">CR</div>
+          <div class="testimonio-info">
+            <strong>Carlos R.</strong>
+            <span>Madrid · hace 1 mes</span>
+            <div class="testimonio-verified">✅ Compra Verificada</div>
+          </div>
+        </div>
+        <div class="stars" style="margin-bottom:0.8rem" aria-label="5 estrellas">★★★★★</div>
+        <p class="testimonio-text">Pedí el pack de 6 sabores y estoy obsesionado con el Berry Fusion. Llegó perfectamente frío, el packaging es muy cuidado. Repetiré sin duda.</p>
+      </article>
+
+      <article class="testimonio-card">
+        <div class="testimonio-header">
+          <div class="testimonio-avatar" style="background:#D0FFD6;color:#4A9E44">LM</div>
+          <div class="testimonio-info">
+            <strong>Laura M.</strong>
+            <span>Barcelona · hace 3 semanas</span>
+            <div class="testimonio-verified">✅ Compra Verificada</div>
+          </div>
+        </div>
+        <div class="stars" style="margin-bottom:0.8rem" aria-label="5 estrellas">★★★★★</div>
+        <p class="testimonio-text">Finalmente una marca que cumple lo que promete. Sabores reales, sin ese gusto artificial que tienen otros. El Golden Sunrise es mi favorito para el desayuno.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="section-cta-final" aria-labelledby="cta-heading">
+  <div class="container cta-final-inner">
+    <h2 id="cta-heading">¿Listo para el primer sorbo?</h2>
+    <p>Más de 500 clientes ya viajan por el mundo con cada botella. Es tu turno.</p>
+    <div class="cta-final-btns">
+      <a href="productos.html" class="btn" style="background:white;color:#111;font-weight:700;box-shadow:none">Explorar sabores →</a>
+      <a href="contacto.html" class="btn btn-outline-white">Habla con nosotros</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" aria-label="Pie de página">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text" style="font-family:'Playfair Display',serif;font-size:1.5rem;color:white;font-weight:900">Shake<span style="color:#F4511E">&</span>Go</span>
+        <p>Batidos naturales con sabores del mundo. Salud, sabor y comodidad en cada botella. Envío refrigerado a toda España.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Productos</h4>
+        <ul>
+          <li><a href="productos.html">Todos los sabores</a></li>
+          <li><a href="productos.html?filtro=energizante">Energizantes</a></li>
+          <li><a href="productos.html?filtro=detox">Detox &amp; Verde</a></li>
+          <li><a href="productos.html?filtro=proteina">Proteicos</a></li>
+          <li><a href="productos.html?filtro=vitaminas">Vitaminas</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>La marca</h4>
+        <ul>
+          <li><a href="nosotros.html">Sobre nosotros</a></li>
+          <li><a href="nosotros.html#valores">Nuestros valores</a></li>
+          <li><a href="nosotros.html#mision">Misión y visión</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ayuda</h4>
+        <ul>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="mailto:shakeandgoes@gmail.com">shakeandgoes@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Shake&amp;Go. Todos los derechos reservados. · www.shakeandgo.es</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ CARRITO PANEL ============ -->
+<div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+<aside class="cart-panel" id="cart-panel" role="complementary" aria-label="Carrito de la compra">
+  <div class="cart-header">
+    <div>
+      <h2>Tu carrito</h2>
+      <p class="cart-header-sub">Revisa tu selección antes de pedir</p>
+    </div>
+    <button class="cart-close" id="cart-close" aria-label="Cerrar carrito">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items" role="list">
+    <div class="cart-empty" id="cart-empty">
+      <div class="cart-empty-icon"></div>
+      <p>Tu carrito está vacío.<br>¡Añade tus sabores favoritos!</p>
+      <a href="productos.html" class="btn btn-primary" style="margin-top:0.5rem">Ver productos</a>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <span id="cart-subtotal-val">0,00€</span>
+    </div>
+    <div class="cart-total-row">
+      <span>Total</span>
+      <span id="cart-total">0,00€</span>
+    </div>
+    <div class="cart-envio">Envío refrigerado gratuito en pedidos +20€</div>
+    <div class="cart-footer-btns">
+      <button class="btn-checkout" id="btn-checkout">Finalizar pedido →</button>
+      <button class="btn-seguir" id="btn-seguir-comprando">← Seguir comprando</button>
+    </div>
+  </div>
+</aside>
+
+<script src="main.js"></script>
+<script src="carrito.js"></script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — Shake&Go</title>
+  <meta name="description" content="¿Tienes alguna pregunta sobre nuestros batidos? Escríbenos. Respondemos en menos de 24h.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥤</text></svg>">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header" role="banner">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="Shake&Go inicio">
+      <img src="assets/img/logo1.png" alt="Shake&Go logo" class="logo-img" onerror="this.style.display='none'">
+      <span class="logo-text">Shake<span>&</span>Go</span>
+    </a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="header-actions">
+      <button class="cart-btn" data-open-cart aria-label="Abrir carrito">
+        🛒 Carrito
+        <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+      </button>
+      <button class="hamburger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" aria-label="Menú móvil">
+  <a href="index.html">Inicio</a>
+  <a href="productos.html">Productos</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="contacto.html">Contacto</a>
+</nav>
+
+<!-- ============ CONTACTO MAIN ============ -->
+<main class="contacto-section" aria-label="Página de contacto">
+  <div class="container">
+    <div class="contacto-grid">
+
+      <!-- Info izquierda -->
+      <div class="contacto-info">
+        <div class="section-tag">Hablemos</div>
+        <h1 class="section-heading">¿Tienes alguna<br><em style="font-style:italic;color:var(--color-naranja)">duda</em>?</h1>
+        <p>Estamos aquí para ayudarte. Tanto si tienes una pregunta sobre un pedido, quieres saber más sobre nuestros ingredientes o simplemente quieres contarnos tu sabor favorito, escríbenos.</p>
+
+        <div class="contacto-item">
+          <div>
+            <strong>Email</strong>
+            <span><a href="mailto:shakeandgoes@gmail.com" style="color:var(--color-naranja)">shakeandgoes@gmail.com</a></span>
+          </div>
+        </div>
+
+        <div class="contacto-item">
+          <div>
+            <strong>Teléfono</strong>
+            <span>91 123 45 67 · Lunes a viernes, 9h–18h</span>
+          </div>
+        </div>
+
+        <div class="contacto-item">
+          <div>
+            <strong>Tiempo de respuesta</strong>
+            <span>Respondemos en menos de 24 horas hábiles</span>
+          </div>
+        </div>
+
+        <div class="contacto-item">
+          <div>
+            <strong>Incidencias de pedido</strong>
+            <span>Para urgencias, menciónalo en el asunto. Prioridad máxima.</span>
+          </div>
+        </div>
+
+        <!-- Redes sociales -->
+        <div style="margin-top:2rem">
+          <div style="font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-gris-medio);margin-bottom:1rem">Síguenos en redes</div>
+          <p style="font-size:0.82rem;color:var(--color-gris-medio);margin-top:0.8rem">@Shakeandgoes en todas las redes sociales</p>
+        </div>
+
+        <!-- Mapa placeholder -->
+        <div style="margin-top:2.5rem;background:var(--color-gris-claro);border-radius:var(--radius-lg);height:200px;display:flex;align-items:center;justify-content:center;border:1px solid var(--color-borde);overflow:hidden;position:relative">
+          <iframe
+              src="https://www.google.com/maps?q=Carrer+d%27Ar%C3%ADstides+Maillol+12,+08028+Barcelona&output=embed"
+              width="100%"
+              height="100%"
+              style="border:0; position:relative; z-index:1;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Formulario derecha -->
+      <div>
+        <div class="form-card">
+          <h3>Envíanos un mensaje</h3>
+          <p>Cuéntanos en qué podemos ayudarte. Respondemos en menos de 24h.</p>
+
+          <form id="contacto-form" novalidate aria-label="Formulario de contacto">
+            <div class="form-row">
+              <div class="form-group" id="grupo-nombre">
+                <label for="nombre">Nombre *</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="given-name" required aria-required="true">
+                <span class="form-error-msg" role="alert">Por favor, introduce tu nombre.</span>
+              </div>
+              <div class="form-group" id="grupo-apellido">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" autocomplete="family-name">
+              </div>
+            </div>
+
+            <div class="form-group" id="grupo-email">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="tu@email.com" autocomplete="email" required aria-required="true">
+              <span class="form-error-msg" role="alert">Por favor, introduce un email válido.</span>
+            </div>
+
+            <div class="form-group" id="grupo-asunto">
+              <label for="asunto">Asunto *</label>
+              <select id="asunto" name="asunto" required aria-required="true">
+                <option value="" disabled selected>Selecciona un motivo</option>
+                <option value="pedido">Consulta sobre un pedido</option>
+                <option value="producto">Información sobre productos</option>
+                <option value="incidencia">Incidencia / devolución</option>
+                <option value="suscripcion">Suscripción mensual</option>
+                <option value="b2b">Colaboración B2B</option>
+                <option value="otro">Otro</option>
+              </select>
+              <span class="form-error-msg" role="alert">Por favor, selecciona un asunto.</span>
+            </div>
+
+            <div class="form-group" id="grupo-mensaje">
+              <label for="mensaje">Mensaje *</label>
+              <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos en qué podemos ayudarte..." required aria-required="true"></textarea>
+              <span class="form-error-msg" role="alert">Por favor, escribe tu mensaje (mínimo 10 caracteres).</span>
+            </div>
+
+            <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:1.5rem">
+              <input type="checkbox" id="privacidad" name="privacidad" required style="width:auto;margin-top:3px;accent-color:var(--color-naranja)" aria-required="true">
+              <label for="privacidad" style="font-size:0.8rem;color:var(--color-gris-medio);cursor:pointer;line-height:1.5">
+                Acepto la <a href="#" style="color:var(--color-naranja);text-decoration:underline">política de privacidad</a> y el tratamiento de mis datos para gestionar mi consulta.
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;padding:16px">
+              Enviar mensaje →
+            </button>
+          </form>
+
+          <!-- Mensaje de éxito -->
+          <div class="form-success" id="form-success" aria-live="polite">
+            <div class="form-success-icon">🎉</div>
+            <h4>¡Mensaje enviado!</h4>
+            <p>Gracias por escribirnos. Te respondemos en menos de 24 horas. Mientras tanto, puedes explorar nuestros sabores.</p>
+            <a href="productos.html" class="btn btn-primary" style="margin-top:1.5rem">Ver productos</a>
+          </div>
+        </div>
+
+        <!-- FAQ rápido -->
+        <div style="margin-top:2rem;background:white;border-radius:var(--radius-lg);padding:2rem;border:1px solid var(--color-borde)">
+          <h3 style="font-family:var(--font-display);font-size:1.1rem;margin-bottom:1.2rem">Preguntas frecuentes</h3>
+          <div style="display:flex;flex-direction:column;gap:1rem">
+            <details style="cursor:pointer">
+              <summary style="font-size:0.88rem;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0;border-bottom:1px solid var(--color-borde)">
+                ¿Cómo llegan los batidos frescos? <span style="color:var(--color-naranja)">+</span>
+              </summary>
+              <p style="font-size:0.84rem;color:var(--color-gris-medio);margin-top:0.8rem;line-height:1.65">Utilizamos cajas isotérmicas certificadas con acumuladores de gel ecológico que mantienen la temperatura entre 2°C y 8°C durante todo el trayecto.</p>
+            </details>
+            <details style="cursor:pointer">
+              <summary style="font-size:0.88rem;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0;border-bottom:1px solid var(--color-borde)">
+                ¿Cuánto tiempo aguantan los batidos? <span style="color:var(--color-naranja)">+</span>
+              </summary>
+              <p style="font-size:0.84rem;color:var(--color-gris-medio);margin-top:0.8rem;line-height:1.65">Garantizamos una vida útil mínima de 21 días desde la recepción, siempre que se mantengan refrigerados. Sin abrir pueden aguantar aún más.</p>
+            </details>
+            <details style="cursor:pointer">
+              <summary style="font-size:0.88rem;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0;border-bottom:1px solid var(--color-borde)">
+                ¿Tienen suscripción mensual? <span style="color:var(--color-naranja)">+</span>
+              </summary>
+              <p style="font-size:0.84rem;color:var(--color-gris-medio);margin-top:0.8rem;line-height:1.65">Sí. Puedes suscribirte a una caja mensual personalizada con tus sabores favoritos y obtener un descuento exclusivo. Escríbenos para configurar la tuya.</p>
+            </details>
+            <details style="cursor:pointer">
+              <summary style="font-size:0.88rem;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0">
+                ¿Envían a toda España? <span style="color:var(--color-naranja)">+</span>
+              </summary>
+              <p style="font-size:0.84rem;color:var(--color-gris-medio);margin-top:0.8rem;line-height:1.65">Sí, enviamos a toda la península. Canarias, Baleares y Ceuta también con envío especial. Consulta costes en el proceso de compra.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" aria-label="Pie de página">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text" style="font-family:'Playfair Display',serif;font-size:1.5rem;color:white;font-weight:900">Shake<span style="color:#F4511E">&</span>Go</span>
+        <p>Batidos naturales con sabores del mundo. Salud, sabor y comodidad en cada botella. Envío refrigerado a toda España.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Productos</h4>
+        <ul>
+          <li><a href="productos.html">Todos los sabores</a></li>
+          <li><a href="productos.html?filtro=energizante">Energizantes</a></li>
+          <li><a href="productos.html?filtro=detox">Detox &amp; Verde</a></li>
+          <li><a href="productos.html?filtro=proteina">Proteicos</a></li>
+          <li><a href="productos.html?filtro=vitaminas">Vitaminas</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>La marca</h4>
+        <ul>
+          <li><a href="nosotros.html">Sobre nosotros</a></li>
+          <li><a href="nosotros.html#valores">Nuestros valores</a></li>
+          <li><a href="nosotros.html#mision">Misión y visión</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ayuda</h4>
+        <ul>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="mailto:shakeandgoes@gmail.com">shakeandgoes@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Shake&amp;Go. Todos los derechos reservados. · www.shakeandgo.es</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ CARRITO ============ -->
+<div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+<aside class="cart-panel" id="cart-panel" role="complementary" aria-label="Carrito de la compra">
+  <div class="cart-header">
+    <div><h2>Tu carrito</h2><p class="cart-header-sub">Revisa tu selección</p></div>
+    <button class="cart-close" id="cart-close" aria-label="Cerrar carrito">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <div class="cart-empty" id="cart-empty" style="display:flex">
+      <div class="cart-empty-icon"></div>
+      <p>Tu carrito está vacío.</p>
+      <a href="productos.html" class="btn btn-primary" style="margin-top:0.5rem">Ver productos</a>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="cart-subtotal-val">0,00€</span></div>
+    <div class="cart-total-row"><span>Total</span><span id="cart-total">0,00€</span></div>
+    <div class="cart-envio">Envío gratis en pedidos +20€</div>
+    <div class="cart-footer-btns">
+      <button class="btn-checkout" id="btn-checkout">Finalizar pedido →</button>
+      <button class="btn-seguir" id="btn-seguir-comprando">← Seguir comprando</button>
+    </div>
+  </div>
+</aside>
+
+<script src="main.js"></script>
+<script src="carrito.js"></script>
+<script>
+/* Validación del formulario de contacto */
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contacto-form');
+  const success = document.getElementById('form-success');
+  if (!form) return;
+
+  function validarCampo(input) {
+    const grupo = input.closest('.form-group');
+    if (!grupo) return true;
+    const eValido = input.checkValidity() && (input.type !== 'textarea' || input.value.trim().length >= 10);
+    grupo.classList.toggle('has-error', !eValido);
+    if (input.tagName === 'TEXTAREA') {
+      grupo.classList.toggle('has-error', input.value.trim().length < 10);
+    }
+    return eValido;
+  }
+
+  form.querySelectorAll('input, textarea, select').forEach(el => {
+    el.addEventListener('blur', () => validarCampo(el));
+    el.addEventListener('input', () => {
+      if (el.closest('.form-group')?.classList.contains('has-error')) validarCampo(el);
+    });
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let formValido = true;
+    const campos = form.querySelectorAll('input[required], textarea[required], select[required]');
+    campos.forEach(campo => {
+      if (!validarCampo(campo)) formValido = false;
+    });
+
+    const privacidad = document.getElementById('privacidad');
+    if (privacidad && !privacidad.checked) {
+      if (typeof window.showToast === 'function') {
+        window.showToast('Debes aceptar la política de privacidad', '⚠️');
+      }
+      formValido = false;
+    }
+
+    if (!formValido) return;
+
+    // Simular envío
+    const btn = form.querySelector('[type="submit"]');
+    btn.textContent = 'Enviando…';
+    btn.disabled = true;
+    setTimeout(() => {
+      form.style.display = 'none';
+      success.classList.add('visible');
+    }, 1200);
+  });
+});
+</script>
+</body>
+</html>
