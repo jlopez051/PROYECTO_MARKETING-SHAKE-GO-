@@ -25,7 +25,7 @@
     </nav>
     <div class="header-actions">
       <button class="cart-btn" data-open-cart aria-label="Abrir carrito">
-        🛒 Carrito
+        🛒
         <span class="cart-count" id="cart-count" aria-live="polite">0</span>
       </button>
       <button class="hamburger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
@@ -50,8 +50,8 @@
       <div>
         <div class="section-tag">Nuestra historia</div>
         <h1 class="section-heading" id="nosotros-heading">
-          Nació de un viaje.<br>
-          Vive en <em style="font-style:italic;color:var(--color-naranja)">cada botella</em>.
+          Nació de un viaje,<br>
+          vive en <em style="font-style:italic;color:var(--color-naranja)">cada batido</em>
         </h1>
         <p style="font-size:1.05rem;color:var(--color-gris-medio);line-height:1.8;margin-top:1.2rem">
           Shake&amp;Go nació de una pregunta sencilla: ¿por qué lo más saludable tiene que ser lo más aburrido? Nos cansamos de batidos sin carácter, sin alma, sin historia.
@@ -73,7 +73,7 @@
   <div class="container">
     <div class="section-tag" style="color:var(--color-naranja)">Lo que nos mueve</div>
     <h2 class="section-heading" id="mision-heading" style="color:white;margin-bottom:3rem">
-      Propósito, dirección<br>y <em style="font-style:italic;color:var(--color-naranja-claro)">compromiso</em>.
+      Propósito, dirección<br>y <em style="font-style:italic;color:var(--color-naranja-claro)">compromiso</em>
     </h2>
     <div class="nosotros-mision-grid">
       <div class="mision-block">
@@ -96,7 +96,7 @@
 <section class="nosotros-valores-section" id="valores" aria-labelledby="valores-heading">
   <div class="container">
     <div class="section-tag">En qué creemos</div>
-    <h2 class="section-heading" id="valores-heading">Los valores que nos<br>hacen <em style="font-style:italic;color:var(--color-naranja)">diferentes</em>.</h2>
+    <h2 class="section-heading" id="valores-heading">Los valores que nos<br>hacen <em style="font-style:italic;color:var(--color-naranja)">diferentes</em></h2>
     <div class="nosotros-valores-grid">
       <div class="nosotros-valor">
         <div class="nosotros-valor-num">01</div>
@@ -132,18 +132,51 @@
   </div>
 </section>
 
+<!-- ============ SOBRE NOSOTROS ============ -->
+<section class="nosotros-mision" id="info" aria-labelledby="mision-heading">
+  <div class="container">
+    <div class="section-tag" style="color:var(--color-naranja)">Sobre nosotros</div>
+      <h2 class="section-heading" id="mision-heading" style="color:white;margin-bottom:3rem">
+        Conoce a los<br><em style="font-style:italic;color:var(--color-naranja-claro)">fundadores</em>
+      </h2>
+
+      <div class="nosotros-mision-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem">
+
+        <!-- Dueño 1 -->
+        <div class="nosotros-block" style="text-align:center">
+          <img src="PauDeFez.png" alt="Fundador 1" style="width:350px;height:350px;border-radius:50%;object-fit:cover;object-position: center 20%;margin:0px auto 1rem auto;display:block;border:3px solid var(--color-naranja)">
+          <h3 style="margin-bottom:0.3rem">Pau De Fez</h3>
+          <span style="font-size:1.15rem;color:var(--color-naranja);font-weight:600">Co-fundador</span>
+          <p style="margin-top:0.8rem">
+            Apasionado por la nutrición y el fitness, Pau creó Shake&Go con la idea de ofrecer una alternativa rápida, saludable y deliciosa para el día a día. Su enfoque está en la calidad de los ingredientes y la innovación constante.
+          </p>
+        </div>
+
+        <!-- Dueño 2 -->
+        <div class="nosotros-block" style="text-align:center">
+          <img src="JuanLopez.png" alt="Fundador 2" style="width:350px;height:350px;border-radius:50%;object-fit:cover;margin:0 auto 1rem auto;display:block;border:3px solid var(--color-naranja)">
+          <h3 style="margin-bottom:0.3rem">Juan López</h3>
+          <span style="font-size:1.15rem;color:var(--color-naranja);font-weight:600">Co-fundador</span>
+          <p style="margin-top:0.8rem">
+            Experto en programación y desarrollo web, Juan es el responsable de toda la parte tecnológica de Shake&Go. Desde la web hasta la experiencia de usuario, se encarga de que todo funcione de forma rápida, intuitiva y eficiente.
+          </p>
+        </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ TAGLINE + BUYER PERSONA ============ -->
 <section class="nosotros-equipo" aria-label="A quién va dirigido">
   <div class="container">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center">
       <div>
         <div class="section-tag">Hecho para ti</div>
-        <h2 class="section-heading">Shake&amp;Go es para quien<br>no quiere elegir<br>entre <em style="font-style:italic">sabor</em> y salud.</h2>
+        <h2 class="section-heading"><em style="font-style:italic">Shake&amp;Go</em> es para quien<br>no quiere elegir<br>entre <em style="font-style:italic">sabor</em> y <em style="font-style:italic">salud</em></h2>
         <p class="section-subheading">
           Nuestro cliente ideal lleva un estilo de vida activo, valora la autenticidad, le interesan otras culturas y busca productos que reflejen sus valores. Le frustra no tener tiempo para cuidarse. Nosotros le damos la solución.
         </p>
         <div class="equipo-tagline">
-          "Shake&amp;Go: disfruta el<br>mundo en cada sorbo,<br>de forma sana y práctica."
+          "Shake&amp;Go: disfruta el<br>mundo en cada sorbo,<br>de forma sana y práctica"
         </div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
