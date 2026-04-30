@@ -24,6 +24,9 @@
       <a href="contacto.html">Contacto</a>
     </nav>
     <div class="header-actions">
+      <button class="user-btn" id="btn-user" aria-label="Mi cuenta" title="Mi cuenta">
+        👤<span id="user-label"></span>
+      </button>
       <button class="cart-btn" data-open-cart aria-label="Abrir carrito">
         🛒
         <span class="cart-count" id="cart-count" aria-live="polite">0</span>
@@ -94,32 +97,20 @@
           <h2 class="product-name">Shake&amp;Go: Berry Fusion</h2>
           <p class="product-desc">Frambuesas silvestres, arándanos y plátano ecológico. Inspirado en los mercados de Provenza. Un explosión de antioxidantes que sabe a verano europeo. <strong>En Stock · Envío frío 24h</strong></p>
 
-          <div style="margin-bottom:0.8rem">
-            <div style="font-size:0.76rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-gris-oscuro);margin-bottom:0.5rem">Elige tu formato:</div>
-            <div class="pack-selector">
-              <button class="pack-btn active" data-pack="1 unidad" data-precio="3.50" data-unidad="por unidad (IVA inc.)">
-                SINGLE<br><small>3,50€</small>
-              </button>
-              <button class="pack-btn" data-pack="6 unidades" data-precio="19.00" data-unidad="6 uds · 3,17€/ud">
-                <span class="pack-badge-pill">MÁS VENDIDO</span>
-                6-PACK<br><small>19,00€</small><span class="pack-label">= 3,17€/ud</span>
-              </button>
-              <button class="pack-btn" data-pack="12 unidades" data-precio="35.00" data-unidad="12 uds · 2,92€/ud">
-                12-PACK<br><small>35,00€</small><span class="pack-label">−15% ahorro</span>
-              </button>
-            </div>
-          </div>
-
           <div class="product-footer">
             <div class="product-precio">
-              <span class="product-precio-valor">3,50€</span>
-              <span class="product-precio-unidad">por unidad (IVA inc.)</span>
+              <span class="product-precio-valor">desde 3,50€</span>
             </div>
-            <button class="btn-add-cart" data-id="berry-fusion" data-nombre="Berry Fusion" data-precio="3.50" aria-label="Añadir Berry Fusion al carrito">
-              + Añadir al carrito
+            <button class="btn-ver-detalle btn btn-primary"
+              data-id="berry-fusion"
+              data-nombre="Berry Fusion"
+              data-img="BerryFusion.png"
+              data-cat="Energizante"
+              data-stars="★★★★★ · (142 reseñas)"
+              data-desc="Frambuesas silvestres, arándanos y plátano ecológico. Inspirado en los mercados de Provenza. Un explosión de antioxidantes que sabe a verano europeo.">
+              Ver detalle →
             </button>
           </div>
-        </div>
       </article>
 
       <!-- 2. Green Boost -->
@@ -138,25 +129,20 @@
           <h2 class="product-name">Shake&amp;Go: Green Boost</h2>
           <p class="product-desc">Kiwi, moras, arándanos y espinacas baby. Inspirado en la filosofía wabi-sabi del equilibrio. Verde puro, intenso, con toque dulce de frutas del bosque. <strong>En Stock · Envío frío 24h</strong></p>
 
-          <div style="margin-bottom:0.8rem">
-            <div style="font-size:0.76rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-gris-oscuro);margin-bottom:0.5rem">Elige tu formato:</div>
-            <div class="pack-selector">
-              <button class="pack-btn active" data-pack="1 unidad" data-precio="3.50" data-unidad="por unidad (IVA inc.)">SINGLE<br><small>3,50€</small></button>
-              <button class="pack-btn" data-pack="6 unidades" data-precio="19.00" data-unidad="6 uds · 3,17€/ud">
-                <span class="pack-badge-pill">MÁS VENDIDO</span>6-PACK<br><small>19,00€</small><span class="pack-label">= 3,17€/ud</span>
-              </button>
-              <button class="pack-btn" data-pack="12 unidades" data-precio="35.00" data-unidad="12 uds · 2,92€/ud">12-PACK<br><small>35,00€</small><span class="pack-label">−15% ahorro</span></button>
-            </div>
-          </div>
-
           <div class="product-footer">
             <div class="product-precio">
-              <span class="product-precio-valor">3,50€</span>
-              <span class="product-precio-unidad">por unidad (IVA inc.)</span>
+              <span class="product-precio-valor">desde 3,50€</span>
             </div>
-            <button class="btn-add-cart" data-id="green-boost" data-nombre="Green Boost" data-precio="3.50">+ Añadir al carrito</button>
+            <button class="btn-ver-detalle btn btn-primary"
+              data-id="green-boost"
+              data-nombre="Green Boost"
+              data-img="GreenBoost.png"
+              data-cat="Detox &amp; Verde"
+              data-stars="★★★★★ · (98 reseñas)"
+              data-desc="Kiwi, moras, arándanos y espinacas baby. Inspirado en la filosofía wabi-sabi del equilibrio. Verde puro, intenso, con toque dulce de frutas del bosque.">
+              Ver detalle →
+            </button>
           </div>
-        </div>
       </article>
 
       <!-- 3. Golden Sunrise -->
@@ -175,23 +161,19 @@
           <h2 class="product-name">Shake&amp;Go: Golden Sunrise</h2>
           <p class="product-desc">Naranja Valencia, mango y semillas de chía. El sabor del amanecer en los zocos marroquíes. Vitamina C pura y energía natural para comenzar el día. <strong>En Stock · Envío frío 24h</strong></p>
 
-          <div style="margin-bottom:0.8rem">
-            <div style="font-size:0.76rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-gris-oscuro);margin-bottom:0.5rem">Elige tu formato:</div>
-            <div class="pack-selector">
-              <button class="pack-btn active" data-pack="1 unidad" data-precio="3.50" data-unidad="por unidad (IVA inc.)">SINGLE<br><small>3,50€</small></button>
-              <button class="pack-btn" data-pack="6 unidades" data-precio="19.00" data-unidad="6 uds · 3,17€/ud">
-                <span class="pack-badge-pill">MÁS VENDIDO</span>6-PACK<br><small>19,00€</small><span class="pack-label">= 3,17€/ud</span>
-              </button>
-              <button class="pack-btn" data-pack="12 unidades" data-precio="35.00" data-unidad="12 uds · 2,92€/ud">12-PACK<br><small>35,00€</small><span class="pack-label">−15% ahorro</span></button>
-            </div>
-          </div>
-
           <div class="product-footer">
             <div class="product-precio">
-              <span class="product-precio-valor">3,50€</span>
-              <span class="product-precio-unidad">por unidad (IVA inc.)</span>
+              <span class="product-precio-valor">desde 3,50€</span>
             </div>
-            <button class="btn-add-cart" data-id="golden-sunrise" data-nombre="Golden Sunrise" data-precio="3.50">+ Añadir al carrito</button>
+            <button class="btn-ver-detalle btn btn-primary"
+              data-id="golden-sunrise"
+              data-nombre="Golden Sunrise"
+              data-img="GoldenSunrise.png"
+              data-cat="Vitaminas"
+              data-stars="★★★★☆ · (76 reseñas)"
+              data-desc="Naranja Valencia, mango y semillas de chía. El sabor del amanecer en los zocos marroquíes. Vitamina C pura y energía natural para comenzar el día.">
+              Ver detalle →
+            </button>
           </div>
         </div>
       </article>
@@ -212,23 +194,19 @@
           <h2 class="product-name">Shake&amp;Go: Nordic Berry</h2>
           <p class="product-desc">Frambuesas, arándanos rojos y romero fresco. Suave, cremoso y lleno de antioxidantes escandinavos. Un abrazo del bosque nórdico en cada sorbo. <strong>En Stock · Envío frío 24h</strong></p>
 
-          <div style="margin-bottom:0.8rem">
-            <div style="font-size:0.76rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-gris-oscuro);margin-bottom:0.5rem">Elige tu formato:</div>
-            <div class="pack-selector">
-              <button class="pack-btn active" data-pack="1 unidad" data-precio="3.50" data-unidad="por unidad (IVA inc.)">SINGLE<br><small>3,50€</small></button>
-              <button class="pack-btn" data-pack="6 unidades" data-precio="19.00" data-unidad="6 uds · 3,17€/ud">
-                <span class="pack-badge-pill">MÁS VENDIDO</span>6-PACK<br><small>19,00€</small><span class="pack-label">= 3,17€/ud</span>
-              </button>
-              <button class="pack-btn" data-pack="12 unidades" data-precio="35.00" data-unidad="12 uds · 2,92€/ud">12-PACK<br><small>35,00€</small><span class="pack-label">−15% ahorro</span></button>
-            </div>
-          </div>
-
           <div class="product-footer">
             <div class="product-precio">
-              <span class="product-precio-valor">3,50€</span>
-              <span class="product-precio-unidad">por unidad (IVA inc.)</span>
+              <span class="product-precio-valor">desde 3,50€</span>
             </div>
-            <button class="btn-add-cart" data-id="nordic-berry" data-nombre="Nordic Berry" data-precio="3.50">+ Añadir al carrito</button>
+            <button class="btn-ver-detalle btn btn-primary"
+              data-id="nordic-berry"
+              data-nombre="Nordic Berry"
+              data-img="NordicBerry.png"
+              data-cat="Proteico"
+              data-stars="★★★★★ · (54 reseñas)"
+              data-desc="Frambuesas, arándanos rojos y romero fresco. Suave, cremoso y lleno de antioxidantes escandinavos. Un abrazo del bosque nórdico en cada sorbo.">
+              Ver detalle →
+            </button>
           </div>
         </div>
       </article>
@@ -249,23 +227,19 @@
           <h2 class="product-name">Shake&amp;Go: Tropical Mango</h2>
           <p class="product-desc">Mango Alfonso, naranja y una pizca de cúrcuma. El calor del Nordeste brasileño embotellado. Refrescante, tropical y con propiedades antiinflamatorias naturales. <strong>En Stock · Envío frío 24h</strong></p>
 
-          <div style="margin-bottom:0.8rem">
-            <div style="font-size:0.76rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-gris-oscuro);margin-bottom:0.5rem">Elige tu formato:</div>
-            <div class="pack-selector">
-              <button class="pack-btn active" data-pack="1 unidad" data-precio="3.50" data-unidad="por unidad (IVA inc.)">SINGLE<br><small>3,50€</small></button>
-              <button class="pack-btn" data-pack="6 unidades" data-precio="19.00" data-unidad="6 uds · 3,17€/ud">
-                <span class="pack-badge-pill">MÁS VENDIDO</span>6-PACK<br><small>19,00€</small><span class="pack-label">= 3,17€/ud</span>
-              </button>
-              <button class="pack-btn" data-pack="12 unidades" data-precio="35.00" data-unidad="12 uds · 2,92€/ud">12-PACK<br><small>35,00€</small><span class="pack-label">−15% ahorro</span></button>
-            </div>
-          </div>
-
           <div class="product-footer">
             <div class="product-precio">
-              <span class="product-precio-valor">3,50€</span>
-              <span class="product-precio-unidad">por unidad (IVA inc.)</span>
+              <span class="product-precio-valor">desde 3,50€</span>
             </div>
-            <button class="btn-add-cart" data-id="tropical-mango" data-nombre="Tropical Mango" data-precio="3.50">+ Añadir al carrito</button>
+            <button class="btn-ver-detalle btn btn-primary"
+              data-id="tropical-mango"
+              data-nombre="Tropical Mango"
+              data-img="TropicalMango.png"
+              data-cat="Tropical"
+              data-stars="★★★★★ · (87 reseñas)"
+              data-desc="Mango Alfonso, naranja y una pizca de cúrcuma. El calor del Nordeste brasileño embotellado. Refrescante, tropical y con propiedades antiinflamatorias naturales.">
+              Ver detalle →
+            </button>
           </div>
         </div>
       </article>
@@ -286,23 +260,19 @@
           <h2 class="product-name">Shake&amp;Go: Caribbean Dream</h2>
           <p class="product-desc">Plátano de Canarias, canela de Ceilán y un toque de nata. Cremoso, cálido, reconfortante. Inspirado en los mercados flotantes de Bangkok. Un lujo hecho smoothie. <strong>En Stock · Envío frío 24h</strong></p>
 
-          <div style="margin-bottom:0.8rem">
-            <div style="font-size:0.76rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-gris-oscuro);margin-bottom:0.5rem">Elige tu formato:</div>
-            <div class="pack-selector">
-              <button class="pack-btn active" data-pack="1 unidad" data-precio="3.50" data-unidad="por unidad (IVA inc.)">SINGLE<br><small>3,50€</small></button>
-              <button class="pack-btn" data-pack="6 unidades" data-precio="19.00" data-unidad="6 uds · 3,17€/ud">
-                <span class="pack-badge-pill">MÁS VENDIDO</span>6-PACK<br><small>19,00€</small><span class="pack-label">= 3,17€/ud</span>
-              </button>
-              <button class="pack-btn" data-pack="12 unidades" data-precio="35.00" data-unidad="12 uds · 2,92€/ud">12-PACK<br><small>35,00€</small><span class="pack-label">−15% ahorro</span></button>
-            </div>
-          </div>
-
           <div class="product-footer">
             <div class="product-precio">
-              <span class="product-precio-valor">3,50€</span>
-              <span class="product-precio-unidad">por unidad (IVA inc.)</span>
+              <span class="product-precio-valor">desde 3,50€</span>
             </div>
-            <button class="btn-add-cart" data-id="caribbean-dream" data-nombre="Caribbean Dream" data-precio="3.50">+ Añadir al carrito</button>
+            <button class="btn-ver-detalle btn btn-primary"
+              data-id="caribbean-dream"
+              data-nombre="Caribbean Dream"
+              data-img="CaribbeanDream.png"
+              data-cat="Tropical"
+              data-stars="★★★★½ · (63 reseñas)"
+              data-desc="Plátano de Canarias, canela de Ceilán y un toque de nata. Cremoso, cálido, reconfortante. Inspirado en los mercados flotantes de Bangkok. Un lujo hecho smoothie.">
+              Ver detalle →
+            </button>
           </div>
         </div>
       </article>
@@ -462,13 +432,20 @@
       <div class="footer-col">
         <h4>Ayuda</h4>
         <ul>
-          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="index.html#faq">Preguntas frecuentes</a></li>
           <li><a href="mailto:shakeandgoes@gmail.com">shakeandgoes@gmail.com</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Shake&amp;Go. Todos los derechos reservados. · www.shakeandgo.es</p>
+      <p>© 2026 Shake&Go. Todos los derechos reservados. · www.shakeandgo.es</p>
+      <p style="margin-top:0.5rem; font-size:0.78rem;">
+        <a href="legal.html#aviso" style="color:var(--color-gris-medio); text-decoration:none;">Aviso legal</a>
+        &nbsp;·&nbsp;
+        <a href="legal.html#privacidad" style="color:var(--color-gris-medio); text-decoration:none;">Política de privacidad</a>
+        &nbsp;·&nbsp;
+        <a href="legal.html#cookies" style="color:var(--color-gris-medio); text-decoration:none;">Cookies</a>
+      </p>
     </div>
   </div>
 </footer>
@@ -498,7 +475,111 @@
   </div>
 </aside>
 
+<!-- ============ MODAL LOGIN/REGISTRO ============ -->
+<div class="modal-overlay" id="modal-auth">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-close-btn">✕</button>
+    <h2 style="margin-bottom:0.3rem">Mi cuenta</h2>
+    <div class="modal-tab-btns">
+      <button class="modal-tab-btn active" data-tab="login">Iniciar sesión</button>
+      <button class="modal-tab-btn" data-tab="registro">Crear cuenta</button>
+    </div>
+    <!-- Login -->
+    <div id="tab-login">
+      <input class="modal-input" type="email" id="login-email" placeholder="Email">
+      <input class="modal-input" type="password" id="login-pass" placeholder="Contraseña">
+      <button class="modal-submit" id="btn-login">Entrar →</button>
+    </div>
+    <!-- Registro -->
+    <div id="tab-registro" style="display:none">
+      <input class="modal-input" type="text" id="reg-nombre" placeholder="Nombre">
+      <input class="modal-input" type="email" id="reg-email" placeholder="Email">
+      <input class="modal-input" type="password" id="reg-pass" placeholder="Contraseña">
+      <button class="modal-submit" id="btn-registro">Crear cuenta →</button>
+    </div>
+    <div id="modal-user-logged" style="display:none; text-align:center;">
+      <p style="font-size:1.1rem; margin-bottom:1rem">👋 Hola, <strong id="user-name-display"></strong></p>
+      <button class="modal-submit" id="btn-logout" style="background:#111">Cerrar sesión</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ POPUP NEWSLETTER ============ -->
+<div class="modal-overlay" id="popup-newsletter" style="z-index:10000">
+  <div class="modal-box" style="text-align:center; max-width:460px">
+    <button class="modal-close" id="popup-close">✕</button>
+    <div style="font-size:3rem; margin-bottom:0.5rem">🥤</div>
+    <h2 style="margin-bottom:0.5rem">¡10% de descuento!</h2>
+    <p style="color:var(--color-gris-oscuro); margin-bottom:1.5rem">Suscríbete a nuestra newsletter y consigue un 10% en tu primer pedido.</p>
+    <input class="modal-input" type="email" id="popup-email" placeholder="tu@email.com">
+    <button class="modal-submit" id="popup-submit">Quiero mi descuento →</button>
+    <p style="font-size:0.75rem; color:var(--color-gris-medio); margin-top:1rem">
+      Sin spam. Puedes darte de baja cuando quieras.
+    </p>
+  </div>
+</div>
+
+<!-- ============ MODAL DETALLE PRODUCTO ============ -->
+<div class="modal-overlay" id="modal-producto">
+  <div class="modal-box" style="max-width:600px; display:flex; gap:1.5rem; padding:2rem; align-items:flex-start; flex-wrap:wrap;">
+    <button class="modal-close" id="modal-prod-close">✕</button>
+    <img id="modal-prod-img" src="" alt="" style="width:180px; border-radius:var(--radius-md); object-fit:cover; flex-shrink:0;">
+    <div style="flex:1; min-width:220px;">
+      <div id="modal-prod-cat" style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--color-naranja); margin-bottom:0.4rem"></div>
+      <h2 id="modal-prod-nombre" style="margin-bottom:0.5rem"></h2>
+      <div id="modal-prod-stars" style="margin-bottom:0.8rem"></div>
+      <p id="modal-prod-desc" style="font-size:0.9rem; color:var(--color-gris-oscuro); margin-bottom:1.2rem"></p>
+
+      <div style="font-size:0.76rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-gris-oscuro);margin-bottom:0.5rem">Elige tu formato:</div>
+      <div class="pack-selector" id="modal-pack-selector">
+        <button class="pack-btn active" data-pack="1 unidad" data-precio="3.50" data-unidad="por unidad (IVA inc.)">SINGLE<br><small>3,50€</small></button>
+        <button class="pack-btn" data-pack="6 unidades" data-precio="19.00" data-unidad="6 uds · 3,17€/ud"><span class="pack-badge-pill">MÁS VENDIDO</span>6-PACK<br><small>19,00€</small><span class="pack-label">= 3,17€/ud</span></button>
+        <button class="pack-btn" data-pack="12 unidades" data-precio="35.00" data-unidad="12 uds · 2,92€/ud">12-PACK<br><small>35,00€</small><span class="pack-label">−15% ahorro</span></button>
+      </div>
+
+      <div class="product-footer" style="margin-top:1.2rem;">
+        <div class="product-precio">
+          <span class="product-precio-valor" id="modal-precio-val">3,50€</span>
+          <span class="product-precio-unidad" id="modal-precio-unidad">por unidad (IVA inc.)</span>
+        </div>
+        <button class="btn-add-cart modal-submit" id="modal-btn-add" style="width:auto; padding:0.75rem 1.5rem; margin-top:0;">
+          + Añadir al carrito
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL DETALLE PRODUCTO ============ -->
+<div class="modal-overlay" id="modal-producto" style="z-index:9998">
+  <div class="modal-box" style="max-width:620px;display:flex;gap:1.8rem;padding:2rem;align-items:flex-start;flex-wrap:wrap;position:relative">
+    <button style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.3rem;cursor:pointer;line-height:1" id="modal-prod-close">✕</button>
+    <img id="modal-prod-img" src="" alt="" style="width:170px;height:210px;border-radius:14px;object-fit:cover;flex-shrink:0;background:var(--color-gris-claro)">
+    <div style="flex:1;min-width:220px">
+      <div id="modal-prod-cat" style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:var(--color-naranja);margin-bottom:0.3rem"></div>
+      <h2 id="modal-prod-nombre" style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:0.3rem"></h2>
+      <div id="modal-prod-stars" style="font-size:0.82rem;color:var(--color-gris-medio);margin-bottom:0.8rem"></div>
+      <p id="modal-prod-desc" style="font-size:0.88rem;color:var(--color-gris-oscuro);line-height:1.7;margin-bottom:1.2rem"></p>
+      <div style="font-size:0.74rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-gris-oscuro);margin-bottom:0.5rem">Elige tu formato:</div>
+      <div class="pack-selector" id="modal-pack-selector">
+        <button class="pack-btn active" data-pack="1 unidad" data-precio="3.50" data-unidad="por unidad (IVA inc.)">SINGLE<br><small>3,50€</small></button>
+        <button class="pack-btn" data-pack="6 unidades" data-precio="19.00" data-unidad="6 uds · 3,17€/ud"><span class="pack-badge-pill">MÁS VENDIDO</span>6-PACK<br><small>19,00€</small><span class="pack-label">= 3,17€/ud</span></button>
+        <button class="pack-btn" data-pack="12 unidades" data-precio="35.00" data-unidad="12 uds · 2,92€/ud">12-PACK<br><small>35,00€</small><span class="pack-label">−15% ahorro</span></button>
+      </div>
+      <div class="product-footer" style="margin-top:1.2rem">
+        <div class="product-precio">
+          <span class="product-precio-valor" id="modal-precio-val">3,50€</span>
+          <span class="product-precio-unidad" id="modal-precio-unidad">por unidad (IVA inc.)</span>
+        </div>
+        <button class="btn-add-cart" id="modal-btn-add" data-precio="3.50" style="padding:0.75rem 1.4rem">+ Añadir al carrito</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <script src="main.js"></script>
+<script src="auth.js"></script>
 <script src="carrito.js"></script>
 </body>
 </html>

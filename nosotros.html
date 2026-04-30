@@ -24,6 +24,9 @@
       <a href="contacto.html">Contacto</a>
     </nav>
     <div class="header-actions">
+      <button class="user-btn" id="btn-user" aria-label="Mi cuenta" title="Mi cuenta">
+        👤<span id="user-label"></span>
+      </button>
       <button class="cart-btn" data-open-cart aria-label="Abrir carrito">
         🛒
         <span class="cart-count" id="cart-count" aria-live="polite">0</span>
@@ -257,13 +260,20 @@
       <div class="footer-col">
         <h4>Ayuda</h4>
         <ul>
-          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="index.html#faq">Preguntas frecuentes</a></li>
           <li><a href="mailto:shakeandgoes@gmail.com">shakeandgoes@gmail.com</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Shake&amp;Go. Todos los derechos reservados. · www.shakeandgo.es</p>
+      <p>© 2026 Shake&Go. Todos los derechos reservados. · www.shakeandgo.es</p>
+      <p style="margin-top:0.5rem; font-size:0.78rem;">
+        <a href="legal.html#aviso" style="color:var(--color-gris-medio); text-decoration:none;">Aviso legal</a>
+        &nbsp;·&nbsp;
+        <a href="legal.html#privacidad" style="color:var(--color-gris-medio); text-decoration:none;">Política de privacidad</a>
+        &nbsp;·&nbsp;
+        <a href="legal.html#cookies" style="color:var(--color-gris-medio); text-decoration:none;">Cookies</a>
+      </p>
     </div>
   </div>
 </footer>
@@ -293,7 +303,52 @@
   </div>
 </aside>
 
+<!-- ============ MODAL LOGIN/REGISTRO ============ -->
+<div class="modal-overlay" id="modal-auth">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-close-btn">✕</button>
+    <h2 style="margin-bottom:0.3rem">Mi cuenta</h2>
+    <div class="modal-tab-btns">
+      <button class="modal-tab-btn active" data-tab="login">Iniciar sesión</button>
+      <button class="modal-tab-btn" data-tab="registro">Crear cuenta</button>
+    </div>
+    <!-- Login -->
+    <div id="tab-login">
+      <input class="modal-input" type="email" id="login-email" placeholder="Email">
+      <input class="modal-input" type="password" id="login-pass" placeholder="Contraseña">
+      <button class="modal-submit" id="btn-login">Entrar →</button>
+    </div>
+    <!-- Registro -->
+    <div id="tab-registro" style="display:none">
+      <input class="modal-input" type="text" id="reg-nombre" placeholder="Nombre">
+      <input class="modal-input" type="email" id="reg-email" placeholder="Email">
+      <input class="modal-input" type="password" id="reg-pass" placeholder="Contraseña">
+      <button class="modal-submit" id="btn-registro">Crear cuenta →</button>
+    </div>
+    <div id="modal-user-logged" style="display:none; text-align:center;">
+      <p style="font-size:1.1rem; margin-bottom:1rem">👋 Hola, <strong id="user-name-display"></strong></p>
+      <button class="modal-submit" id="btn-logout" style="background:#111">Cerrar sesión</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ POPUP NEWSLETTER ============ -->
+<div class="modal-overlay" id="popup-newsletter" style="z-index:10000">
+  <div class="modal-box" style="text-align:center; max-width:460px">
+    <button class="modal-close" id="popup-close">✕</button>
+    <div style="font-size:3rem; margin-bottom:0.5rem">🥤</div>
+    <h2 style="margin-bottom:0.5rem">¡10% de descuento!</h2>
+    <p style="color:var(--color-gris-oscuro); margin-bottom:1.5rem">Suscríbete a nuestra newsletter y consigue un 10% en tu primer pedido.</p>
+    <input class="modal-input" type="email" id="popup-email" placeholder="tu@email.com">
+    <button class="modal-submit" id="popup-submit">Quiero mi descuento →</button>
+    <p style="font-size:0.75rem; color:var(--color-gris-medio); margin-top:1rem">
+      Sin spam. Puedes darte de baja cuando quieras.
+    </p>
+  </div>
+</div>
+
 <script src="main.js"></script>
+<script src="auth.js"></script>
 <script src="carrito.js"></script>
 </body>
 </html>

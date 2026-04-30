@@ -1517,6 +1517,62 @@ input, textarea, select { font-family: inherit; }
 }
 .rrss-link:hover { background: var(--color-naranja); border-color: var(--color-naranja); color: white; transform: translateY(-3px); }
 
+.user-btn {
+  background: none;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radius-md);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background 0.2s;
+}
+.user-btn:hover { background: var(--color-gris-claro); }
+
+/* Modal */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.modal-overlay.open { display: flex; }
+.modal-box {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+.modal-close {
+  position: absolute; top: 1rem; right: 1rem;
+  background: none; border: none; font-size: 1.2rem; cursor: pointer;
+}
+.modal-tab-btns { display: flex; gap: 0; margin-bottom: 1.5rem; border-bottom: 2px solid var(--color-gris-claro); }
+.modal-tab-btn {
+  flex: 1; padding: 0.7rem; background: none; border: none;
+  font-weight: 700; cursor: pointer; font-size: 0.9rem;
+  border-bottom: 2px solid transparent; margin-bottom: -2px;
+}
+.modal-tab-btn.active { border-bottom-color: var(--color-naranja); color: var(--color-naranja); }
+.modal-input {
+  width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--color-borde);
+  border-radius: var(--radius-md); font-size: 0.9rem;
+  margin-bottom: 0.9rem; box-sizing: border-box;
+}
+.modal-submit {
+  width: 100%; padding: 0.85rem; background: var(--color-naranja);
+  color: white; border: none; border-radius: var(--radius-md);
+  font-weight: 700; font-size: 1rem; cursor: pointer; margin-top: 0.5rem;
+}
+
 /* Formulario */
 .form-card {
   background: var(--color-blanco);

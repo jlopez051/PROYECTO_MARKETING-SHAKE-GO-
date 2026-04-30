@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Textos Legales — Shake&Go</title>
+  <meta name="description" content="Aviso legal, política de privacidad y política de cookies de Shake&Go.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥤</text></svg>">
+  <style>
+    .legal-hero {
+      background: var(--color-negro);
+      color: white;
+      padding: 6rem 0 3rem;
+      margin-top: var(--header-height);
+    }
+    .legal-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+    }
+    .legal-hero p {
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+    .legal-nav {
+      background: var(--color-crema);
+      border-bottom: 1px solid var(--color-borde);
+      position: sticky;
+      top: var(--header-height);
+      z-index: 100;
+    }
+    .legal-nav-inner {
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+    }
+    .legal-nav a {
+      padding: 1rem 1.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-gris-medio);
+      text-decoration: none;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: var(--transition);
+    }
+    .legal-nav a:hover {
+      color: var(--color-naranja);
+      border-bottom-color: var(--color-naranja);
+    }
+    .legal-content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 6rem;
+    }
+    .legal-section {
+      margin-bottom: 5rem;
+      scroll-margin-top: calc(var(--header-height) + 60px);
+    }
+    .legal-section-tag {
+      display: inline-block;
+      background: var(--color-naranja);
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-pill);
+      margin-bottom: 1rem;
+    }
+    .legal-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      font-weight: 900;
+      margin-bottom: 0.4rem;
+      color: var(--color-negro);
+    }
+    .legal-updated {
+      font-size: 0.78rem;
+      color: var(--color-gris-medio);
+      margin-bottom: 2rem;
+      display: block;
+    }
+    .legal-section h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 2rem 0 0.5rem;
+      color: var(--color-negro);
+    }
+    .legal-section p,
+    .legal-section li {
+      font-size: 0.92rem;
+      color: var(--color-gris-oscuro);
+      line-height: 1.75;
+    }
+    .legal-section ul {
+      padding-left: 1.4rem;
+      margin: 0.5rem 0 1rem;
+    }
+    .legal-section ul li {
+      margin-bottom: 0.3rem;
+    }
+    .legal-divider {
+      border: none;
+      border-top: 1px solid var(--color-borde);
+      margin: 5rem 0;
+    }
+    .legal-contact-box {
+      background: var(--color-crema);
+      border: 1px solid var(--color-borde);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 2rem;
+      margin-top: 2rem;
+    }
+    .legal-contact-box p {
+      font-size: 0.88rem;
+      color: var(--color-gris-oscuro);
+    }
+    .legal-contact-box a {
+      color: var(--color-naranja);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header" role="banner">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="Shake&Go inicio">
+      <img src="assets/img/logo1.png" alt="Shake&Go logo" class="logo-img" onerror="this.style.display='none'">
+      <span class="logo-text">Shake<span>&</span>Go</span>
+    </a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="header-actions">
+      <button class="cart-btn" data-open-cart aria-label="Abrir carrito">
+        🛒
+        <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+      </button>
+      <button class="hamburger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Menú móvil -->
+<nav class="mobile-nav" aria-label="Menú móvil">
+  <a href="index.html">Inicio</a>
+  <a href="productos.html">Productos</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="contacto.html">Contacto</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<div class="legal-hero">
+  <div class="container">
+    <h1>Información Legal</h1>
+    <p>Última actualización: mayo de 2026</p>
+  </div>
+</div>
+
+<!-- ============ NAV INTERNO ============ -->
+<nav class="legal-nav" aria-label="Índice de textos legales">
+  <div class="container legal-nav-inner">
+    <a href="#aviso">Aviso Legal</a>
+    <a href="#privacidad">Política de Privacidad</a>
+    <a href="#cookies">Política de Cookies</a>
+  </div>
+</nav>
+
+<!-- ============ CONTENIDO ============ -->
+<main class="legal-content">
+
+  <!-- ======= AVISO LEGAL ======= -->
+  <section id="aviso" class="legal-section">
+    <span class="legal-section-tag">Aviso legal</span>
+    <h2>Aviso Legal</h2>
+    <span class="legal-updated">Última actualización: mayo de 2026</span>
+
+    <h3>1. Datos identificativos del titular</h3>
+    <p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSI-CE), se informa de los datos del titular del sitio web:</p>
+    <ul>
+      <li><strong>Denominación social:</strong> Shake&amp;Go</li>
+      <li><strong>Actividad:</strong> Venta de batidos naturales</li>
+      <li><strong>Correo electrónico:</strong> shakeandgoes@gmail.com</li>
+      <li><strong>Web:</strong> www.shakeandgo.es</li>
+    </ul>
+
+    <h3>2. Objeto y ámbito de aplicación</h3>
+    <p>El presente Aviso Legal regula el acceso y uso del sitio web www.shakeandgo.es. El acceso al sitio web implica la aceptación plena y sin reservas de todas las disposiciones incluidas en este Aviso Legal.</p>
+
+    <h3>3. Propiedad intelectual e industrial</h3>
+    <p>Todos los contenidos del sitio web (textos, imágenes, logotipos, diseño gráfico, código fuente, etc.) son propiedad de Shake&amp;Go o de terceros que han autorizado su uso. Queda prohibida su reproducción, distribución o modificación sin autorización expresa.</p>
+
+    <h3>4. Responsabilidad</h3>
+    <p>Shake&amp;Go no se hace responsable de los daños o perjuicios que pudieran derivarse del uso del sitio web, ni de la información contenida en páginas de terceros a las que se pueda acceder mediante enlaces desde esta web.</p>
+
+    <h3>5. Legislación aplicable</h3>
+    <p>Este Aviso Legal se rige por la legislación española vigente. Para cualquier controversia, las partes se someten a los juzgados y tribunales del domicilio del usuario, salvo que la ley disponga otro fuero imperativo.</p>
+
+    <div class="legal-contact-box">
+      <p>¿Tienes alguna duda sobre el aviso legal? Escríbenos a <a href="mailto:shakeandgoes@gmail.com">shakeandgoes@gmail.com</a></p>
+    </div>
+  </section>
+
+  <hr class="legal-divider">
+
+  <!-- ======= POLÍTICA DE PRIVACIDAD ======= -->
+  <section id="privacidad" class="legal-section">
+    <span class="legal-section-tag">Privacidad</span>
+    <h2>Política de Privacidad</h2>
+    <span class="legal-updated">Última actualización: mayo de 2026</span>
+
+    <h3>1. Responsable del tratamiento</h3>
+    <p>El responsable del tratamiento de los datos personales recogidos a través de este sitio web es <strong>Shake&amp;Go</strong>, contactable en shakeandgoes@gmail.com.</p>
+
+    <h3>2. Datos que recogemos</h3>
+    <p>Podemos recoger los siguientes datos personales:</p>
+    <ul>
+      <li>Nombre y apellidos</li>
+      <li>Dirección de correo electrónico</li>
+      <li>Dirección de envío y facturación</li>
+      <li>Datos de pago (gestionados por pasarela de pago segura, no almacenados por nosotros)</li>
+      <li>Datos de navegación (cookies, dirección IP)</li>
+    </ul>
+
+    <h3>3. Finalidad del tratamiento</h3>
+    <p>Los datos personales se tratan para las siguientes finalidades:</p>
+    <ul>
+      <li>Gestión de pedidos y envíos</li>
+      <li>Comunicaciones relacionadas con tu compra</li>
+      <li>Envío de newsletter si has dado tu consentimiento</li>
+      <li>Mejora de la experiencia de usuario en el sitio web</li>
+    </ul>
+
+    <h3>4. Base legal del tratamiento</h3>
+    <p>El tratamiento de tus datos se basa en la ejecución del contrato de compraventa (art. 6.1.b RGPD), el cumplimiento de obligaciones legales (art. 6.1.c RGPD), y el consentimiento prestado para comunicaciones comerciales (art. 6.1.a RGPD).</p>
+
+    <h3>5. Conservación de datos</h3>
+    <p>Los datos se conservarán durante el tiempo necesario para cumplir la finalidad para la que fueron recogidos, y mientras existan obligaciones legales que lo requieran.</p>
+
+    <h3>6. Tus derechos</h3>
+    <p>Puedes ejercer en cualquier momento los siguientes derechos:</p>
+    <ul>
+      <li><strong>Acceso:</strong> conocer qué datos tenemos sobre ti</li>
+      <li><strong>Rectificación:</strong> corregir datos incorrectos</li>
+      <li><strong>Supresión:</strong> solicitar la eliminación de tus datos</li>
+      <li><strong>Oposición:</strong> oponerte al tratamiento en determinados supuestos</li>
+      <li><strong>Portabilidad:</strong> recibir tus datos en formato estructurado</li>
+    </ul>
+    <p>Para ejercer estos derechos, envía un correo a <a href="mailto:shakeandgoes@gmail.com" style="color:var(--color-naranja);font-weight:600">shakeandgoes@gmail.com</a>. También tienes derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es).</p>
+
+    <h3>7. Seguridad</h3>
+    <p>Adoptamos las medidas técnicas y organizativas necesarias para garantizar la seguridad de tus datos y evitar su alteración, pérdida o acceso no autorizado.</p>
+
+    <div class="legal-contact-box">
+      <p>Para cualquier consulta sobre privacidad, contacta con nosotros en <a href="mailto:shakeandgoes@gmail.com">shakeandgoes@gmail.com</a></p>
+    </div>
+  </section>
+
+  <hr class="legal-divider">
+
+  <!-- ======= POLÍTICA DE COOKIES ======= -->
+  <section id="cookies" class="legal-section">
+    <span class="legal-section-tag">Cookies</span>
+    <h2>Política de Cookies</h2>
+    <span class="legal-updated">Última actualización: mayo de 2026</span>
+
+    <h3>1. ¿Qué son las cookies?</h3>
+    <p>Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas un sitio web. Sirven para recordar tus preferencias, mejorar tu experiencia de navegación y recopilar información estadística.</p>
+
+    <h3>2. Cookies que utilizamos</h3>
+    <p>Este sitio web utiliza las siguientes cookies:</p>
+    <ul>
+      <li><strong>Cookies técnicas (necesarias):</strong> imprescindibles para el funcionamiento del sitio, como mantener el carrito de la compra o la sesión de usuario. No requieren consentimiento.</li>
+      <li><strong>Cookies de preferencias:</strong> recuerdan tus elecciones (por ejemplo, si ya has visto el popup de bienvenida). No requieren consentimiento.</li>
+      <li><strong>Cookies analíticas:</strong> nos permiten entender cómo navegas por el sitio para mejorarlo. Requieren tu consentimiento.</li>
+    </ul>
+
+    <h3>3. Cookies de terceros</h3>
+    <p>En caso de incluir vídeos u otros contenidos externos, proveedores como Google o Vimeo pueden instalar sus propias cookies. Consulta sus políticas de privacidad para más información.</p>
+
+    <h3>4. ¿Cómo gestionar las cookies?</h3>
+    <p>Puedes configurar tu navegador para bloquear o eliminar las cookies en cualquier momento. Ten en cuenta que desactivar ciertas cookies puede afectar al funcionamiento del sitio.</p>
+    <ul>
+      <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener" style="color:var(--color-naranja)">Chrome</a></li>
+      <li><a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank" rel="noopener" style="color:var(--color-naranja)">Firefox</a></li>
+      <li><a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener" style="color:var(--color-naranja)">Safari</a></li>
+      <li><a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener" style="color:var(--color-naranja)">Edge</a></li>
+    </ul>
+
+    <h3>5. Actualizaciones</h3>
+    <p>Shake&amp;Go se reserva el derecho a modificar esta Política de Cookies para adaptarla a cambios normativos o técnicos. Te recomendamos revisarla periódicamente.</p>
+
+    <div class="legal-contact-box">
+      <p>¿Preguntas sobre cookies? Escríbenos a <a href="mailto:shakeandgoes@gmail.com">shakeandgoes@gmail.com</a></p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" aria-label="Pie de página">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text" style="font-family:'Playfair Display',serif;font-size:1.5rem;color:white;font-weight:900">Shake<span style="color:#F4511E">&</span>Go</span>
+        <p>Batidos naturales con sabores del mundo. Salud, sabor y comodidad en cada botella. Envío refrigerado a toda España.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Productos</h4>
+        <ul>
+          <li><a href="productos.html">Todos los sabores</a></li>
+          <li><a href="productos.html?filtro=energizante">Energizantes</a></li>
+          <li><a href="productos.html?filtro=detox">Detox &amp; Verde</a></li>
+          <li><a href="productos.html?filtro=proteina">Proteicos</a></li>
+          <li><a href="productos.html?filtro=vitaminas">Vitaminas</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>La marca</h4>
+        <ul>
+          <li><a href="nosotros.html">Sobre nosotros</a></li>
+          <li><a href="nosotros.html#valores">Nuestros valores</a></li>
+          <li><a href="nosotros.html#mision">Misión y visión</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ayuda</h4>
+        <ul>
+          <li><a href="index.html#faq">Preguntas frecuentes</a></li>
+          <li><a href="mailto:shakeandgoes@gmail.com">shakeandgoes@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Shake&amp;Go. Todos los derechos reservados. · www.shakeandgo.es</p>
+      <p style="margin-top:0.5rem; font-size:0.78rem;">
+        <a href="legal.html#aviso" style="color:var(--color-gris-medio); text-decoration:none;">Aviso legal</a>
+        &nbsp;·&nbsp;
+        <a href="legal.html#privacidad" style="color:var(--color-gris-medio); text-decoration:none;">Política de privacidad</a>
+        &nbsp;·&nbsp;
+        <a href="legal.html#cookies" style="color:var(--color-gris-medio); text-decoration:none;">Cookies</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ CARRITO PANEL ============ -->
+<div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+<aside class="cart-panel" id="cart-panel" role="complementary" aria-label="Carrito de la compra">
+  <div class="cart-header">
+    <div>
+      <h2>Tu carrito</h2>
+      <p class="cart-header-sub">Revisa tu selección antes de pedir</p>
+    </div>
+    <button class="cart-close" id="cart-close" aria-label="Cerrar carrito">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items" role="list">
+    <div class="cart-empty" id="cart-empty">
+      <div class="cart-empty-icon"></div>
+      <p>Tu carrito está vacío.<br>¡Añade tus sabores favoritos!</p>
+      <a href="productos.html" class="btn btn-primary" style="margin-top:0.5rem">Ver productos</a>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <span id="cart-subtotal-val">0,00€</span>
+    </div>
+    <div class="cart-total-row">
+      <span>Total</span>
+      <span id="cart-total">0,00€</span>
+    </div>
+    <div class="cart-envio">Envío refrigerado gratuito en pedidos +20€</div>
+    <div class="cart-footer-btns">
+      <button class="btn-checkout" id="btn-checkout">Finalizar pedido →</button>
+      <button class="btn-seguir" id="btn-seguir-comprando">← Seguir comprando</button>
+    </div>
+  </div>
+</aside>
+
+<script src="main.js"></script>
+<script src="carrito.js"></script>
+</body>
+</html>

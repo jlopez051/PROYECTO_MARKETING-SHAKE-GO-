@@ -58,6 +58,7 @@
       window.showToast(`<strong>${producto.nombre}</strong> añadido al carrito`, '🛒');
     }
   }
+  window.addToCart = addToCart;
 
   /* ---- Eliminar producto ---- */
   function removeFromCart(id, pack) {
