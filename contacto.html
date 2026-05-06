@@ -153,6 +153,13 @@
               </label>
             </div>
 
+            <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:1.5rem">
+              <input type="checkbox" id="informacion" name="informacion" required style="width:auto;margin-top:3px;accent-color:var(--color-naranja)">
+              <label for="informacion" style="font-size:0.8rem;color:var(--color-gris-medio);cursor:pointer;line-height:1.5">
+                Acepto recibir información sobre las promociones, descuentos y todas las novedades sobre los próximos drops de Shake&Go.
+              </label>
+            </div>
+
             <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;padding:16px">
               Enviar mensaje →
             </button>
@@ -333,6 +340,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function validarCampo(input) {
     const grupo = input.closest('.form-group');
     if (!grupo) return true;
+    
+    // Manejar checkboxes por separado
+    if (input.type === 'checkbox') {
+      const eValido = input.checked;
+      grupo.classList.toggle('has-error', !eValido);
+      return eValido;
+    }
+    
     const eValido = input.checkValidity() && (input.type !== 'textarea' || input.value.trim().length >= 10);
     grupo.classList.toggle('has-error', !eValido);
     if (input.tagName === 'TEXTAREA') {
@@ -346,33 +361,42 @@ document.addEventListener('DOMContentLoaded', () => {
     el.addEventListener('input', () => {
       if (el.closest('.form-group')?.classList.contains('has-error')) validarCampo(el);
     });
+    // Para checkboxes, validar en 'change'
+    if (el.type === 'checkbox') {
+      el.addEventListener('change', () => validarCampo(el));
+    }
   });
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     let formValido = true;
-    const campos = form.querySelectorAll('input[required], textarea[required], select[required]');
+    
+    // Validar todos los campos, excluyendo checkboxes required aquí
+    const campos = form.querySelectorAll('input:not([type="checkbox"])[required], textarea[required], select[required]');
     campos.forEach(campo => {
       if (!validarCampo(campo)) formValido = false;
     });
 
-    const privacidad = document.getElementById('privacidad');
-    if (privacidad && !privacidad.checked) {
-      if (typeof window.showToast === 'function') {
-        window.showToast('Debes aceptar la política de privacidad', '⚠️');
-      }
-      formValido = false;
-    }
+    // Validar checkboxes por separado
+    const checkboxes = form.querySelectorAll('input[type="checkbox"][required]');
+    checkboxes.forEach(cbox => {
+      if (!validarCampo(cbox)) formValido = false;
+    });
 
-    if (!formValido) return;
+    if (!formValido) {
+      if (typeof window.showToast === 'function') {
+        window.showToast('Por favor, completa todos los campos requeridos', '⚠️');
+      }
+      return;
+    }
 
     // Simular envío
     const btn = form.querySelector('[type="submit"]');
     btn.textContent = 'Enviando…';
     btn.disabled = true;
     setTimeout(() => {
-      form.style.display = 'none';
-      success.classList.add('visible');
+    form.style.display = 'none';
+    success.classList.add('visible');
     }, 1200);
   });
 });
