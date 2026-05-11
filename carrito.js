@@ -59,6 +59,7 @@
     }
   }
   window.addToCart = addToCart;
+  window.updateCartCount = updateCartCount;
 
   /* ---- Eliminar producto ---- */
   function removeFromCart(id, pack) {
@@ -163,7 +164,7 @@
     const seguirBtn = document.getElementById('btn-seguir-comprando');
     if (seguirBtn) seguirBtn.addEventListener('click', closeCart);
 
-    // Finalizar pedido (simulado)
+    // Finalizar pedido (redirigir a checkout)
     const checkoutBtn = document.getElementById('btn-checkout');
     if (checkoutBtn) {
       checkoutBtn.addEventListener('click', () => {
@@ -173,15 +174,8 @@
           }
           return;
         }
-        const total = calcTotal();
         closeCart();
-        if (typeof window.showToast === 'function') {
-          window.showToast(`¡Pedido procesado! Total: ${total.toFixed(2)}€ 🎉`, '🎉');
-        }
-        carrito = [];
-        saveCart();
-        updateCartCount();
-        renderCart();
+        window.location.href = 'checkout.html';
       });
     }
 

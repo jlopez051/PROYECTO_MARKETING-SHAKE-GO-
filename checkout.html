@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — Shake&Go</title>
+  <meta name="description" content="Completa tu pedido en Shake&Go. Revisa tu carrito y finaliza la compra de manera segura.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥤</text></svg>">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header" role="banner">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="Shake&Go inicio">
+      <img src="assets/img/logo1.png" alt="Shake&Go logo" class="logo-img" onerror="this.style.display='none'">
+      <span class="logo-text">Shake<span>&</span>Go</span>
+    </a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="header-actions">
+      <button class="user-btn" id="btn-user" aria-label="Mi cuenta" title="Mi cuenta">
+        👤<span id="user-label"></span>
+      </button>
+      <button class="cart-btn" data-open-cart aria-label="Abrir carrito">
+        🛒
+        <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+      </button>
+      <button class="hamburger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" aria-label="Menú móvil">
+  <a href="index.html">Inicio</a>
+  <a href="productos.html">Productos</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="contacto.html">Contacto</a>
+</nav>
+
+<!-- ============ CHECKOUT MAIN ============ -->
+<main class="checkout-section" aria-label="Proceso de checkout">
+  <div class="container">
+    <div class="checkout-grid">
+      <!-- Formulario de checkout -->
+      <div class="checkout-form">
+        <div class="section-tag">Finalizar compra</div>
+        <h1 class="section-heading">Completa tu <em style="font-style:italic;color:var(--color-naranja)">pedido</em></h1>
+        
+        <form id="checkout-form">
+          <!-- Información personal -->
+          <div class="checkout-step">
+            <h3>Información personal</h3>
+            <div class="form-group">
+              <label for="nombre">Nombre completo *</label>
+              <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono *</label>
+              <input type="tel" id="telefono" name="telefono" required>
+            </div>
+          </div>
+          
+          <!-- Dirección de envío -->
+          <div class="checkout-step">
+            <h3>Dirección de envío</h3>
+            <div class="form-group">
+              <label for="direccion">Dirección *</label>
+              <input type="text" id="direccion" name="direccion" placeholder="Calle, número, piso" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="codigo-postal">Código postal *</label>
+                <input type="text" id="codigo-postal" name="codigo-postal" required>
+              </div>
+              <div class="form-group">
+                <label for="ciudad">Ciudad *</label>
+                <input type="text" id="ciudad" name="ciudad" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="provincia">Provincia *</label>
+              <input type="text" id="provincia" name="provincia" required>
+            </div>
+          </div>
+          
+          <!-- Método de pago -->
+          <div class="checkout-step">
+            <h3>Método de pago</h3>
+            <div class="payment-methods">
+              <label class="payment-option">
+                <input type="radio" name="pago" value="tarjeta" checked>
+                <span>Tarjeta de crédito/débito</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="pago" value="paypal">
+                <span>PayPal</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="pago" value="transferencia">
+                <span>Transferencia bancaria</span>
+              </label>
+            </div>
+            <div id="tarjeta-fields" class="payment-fields">
+              <div class="form-group">
+                <label for="numero-tarjeta">Número de tarjeta *</label>
+                <input type="text" id="numero-tarjeta" name="numero-tarjeta" placeholder="1234 5678 9012 3456" required>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fecha-exp">Fecha de expiración *</label>
+                  <input type="text" id="fecha-exp" name="fecha-exp" placeholder="MM/AA" required>
+                </div>
+                <div class="form-group">
+                  <label for="cvv">CVV *</label>
+                  <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Comentarios -->
+
+          
+          <button type="submit" class="btn btn-primary" id="btn-confirmar">Confirmar pedido →</button>
+        </form>
+      </div>
+      
+      <!-- Resumen del pedido -->
+      <div class="checkout-summary">
+        <h3>Resumen del pedido</h3>
+        <div id="order-items">
+          <!-- Items del carrito se cargarán aquí -->
+        </div>
+        <div class="order-totals">
+          <div class="order-subtotal"><span>Subtotal</span><span id="summary-subtotal">0,00€</span></div>
+          <div class="order-envio"><span>Envío</span><span id="summary-envio">Gratis</span></div>
+          <div class="order-total"><span>Total</span><span id="summary-total">0,00€</span></div>
+        </div>
+        <div class="checkout-guarantee">
+          <p> -  Pago seguro</p>
+          <p> -  Envío gratuito en pedidos +20€</p>
+          <p> -  Entrega en 24-48h</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" aria-label="Pie de página">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text" style="font-family:'Playfair Display',serif;font-size:1.5rem;color:white;font-weight:900">Shake<span style="color:#F4511E">&</span>Go</span>
+        <p>Batidos naturales con sabores del mundo. Salud, sabor y comodidad en cada botella. Envío refrigerado a toda España.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Productos</h4>
+        <ul>
+          <li><a href="productos.html">Todos los sabores</a></li>
+          <li><a href="productos.html?filtro=europa">Europa</a></li>
+          <li><a href="productos.html?filtro=asia">Asia</a></li>
+          <li><a href="productos.html?filtro=america">América</a></li>
+          <li><a href="productos.html?filtro=africa">África</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>La marca</h4>
+        <ul>
+          <li><a href="nosotros.html">Sobre nosotros</a></li>
+          <li><a href="nosotros.html#valores">Nuestros valores</a></li>
+          <li><a href="nosotros.html#mision">Misión y visión</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ayuda</h4>
+        <ul>
+          <li><a href="index.html#faq">Preguntas frecuentes</a></li>
+          <li><a href="mailto:admin@shakeandgo.com">admin@shakeandgo.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Shake&amp;Go. Todos los derechos reservados. · www.shakeandgo.es</p>
+      <p style="margin-top:0.5rem; font-size:0.78rem;">
+        <a href="legal.html#aviso" style="color:var(--color-gris-medio); text-decoration:none;">Aviso legal</a>
+        &nbsp;·&nbsp;
+        <a href="legal.html#privacidad" style="color:var(--color-gris-medio); text-decoration:none;">Política de privacidad</a>
+        &nbsp;·&nbsp;
+        <a href="legal.html#cookies" style="color:var(--color-gris-medio); text-decoration:none;">Cookies</a>
+        &nbsp;·&nbsp;
+        <a href="legal.html#venta" style="color:var(--color-gris-medio); text-decoration:none;">Condiciones de venta</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ CARRITO ============ -->
+<div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+<aside class="cart-panel" id="cart-panel" role="complementary" aria-label="Carrito de la compra">
+  <div class="cart-header">
+    <div><h2>Tu carrito</h2><p class="cart-header-sub">Revisa tu selección</p></div>
+    <button class="cart-close" id="cart-close" aria-label="Cerrar carrito">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <div class="cart-empty" id="cart-empty" style="display:flex">
+      <div class="cart-empty-icon"></div>
+      <p>Tu carrito está vacío.</p>
+      <a href="productos.html" class="btn btn-primary" style="margin-top:0.5rem">Ver productos</a>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="cart-subtotal-val">0,00€</span></div>
+    <div class="cart-total-row"><span>Total</span><span id="cart-total">0,00€</span></div>
+    <div class="cart-envio">Envío gratis en pedidos +20€</div>
+    <div class="cart-footer-btns">
+      <button class="btn-checkout" id="btn-checkout">Finalizar pedido →</button>
+      <button class="btn-seguir" id="btn-seguir-comprando">← Seguir comprando</button>
+    </div>
+  </div>
+</aside>
+
+<!-- ============ MODAL LOGIN/REGISTRO ============ -->
+<div class="modal-overlay" id="modal-auth">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-close-btn">✕</button>
+    <h2 style="margin-bottom:0.3rem">Mi cuenta</h2>
+    <div class="modal-tab-btns">
+      <button class="modal-tab-btn active" data-tab="login">Iniciar sesión</button>
+      <button class="modal-tab-btn" data-tab="registro">Crear cuenta</button>
+    </div>
+    <!-- Login -->
+    <div id="tab-login">
+      <input class="modal-input" type="email" id="login-email" placeholder="Email">
+      <input class="modal-input" type="password" id="login-pass" placeholder="Contraseña">
+      <button class="modal-submit" id="btn-login">Entrar →</button>
+    </div>
+    <!-- Registro -->
+    <div id="tab-registro" style="display:none">
+      <input class="modal-input" type="text" id="reg-nombre" placeholder="Nombre">
+      <input class="modal-input" type="email" id="reg-email" placeholder="Email">
+      <input class="modal-input" type="password" id="reg-pass" placeholder="Contraseña">
+      <button class="modal-submit" id="btn-registro">Crear cuenta →</button>
+    </div>
+    <div id="modal-user-logged" style="display:none; text-align:center;">
+      <p style="font-size:1.1rem; margin-bottom:1rem">👋 Hola, <strong id="user-name-display"></strong></p>
+      <button class="modal-submit" id="btn-logout" style="background:#111">Cerrar sesión</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ POPUP NEWSLETTER ============ -->
+<div class="modal-overlay" id="popup-newsletter" style="z-index:10000">
+  <div class="modal-box" style="text-align:center; max-width:460px">
+    <button class="modal-close" id="popup-close">✕</button>
+    <div style="font-size:3rem; margin-bottom:0.5rem">🥤</div>
+    <h2 style="margin-bottom:0.5rem">¡10% de descuento!</h2>
+    <p style="color:var(--color-gris-oscuro); margin-bottom:1.5rem">Suscríbete a nuestra newsletter y consigue un 10% en tu primer pedido.</p>
+    <input class="modal-input" type="email" id="popup-email" placeholder="tu@email.com">
+    <button class="modal-submit" id="popup-submit">Quiero mi descuento →</button>
+    <p style="font-size:0.75rem; color:var(--color-gris-medio); margin-top:1rem">
+      Sin spam. Puedes darte de baja cuando quieras.
+    </p>
+  </div>
+</div>
+
+<script src="main.js"></script>
+<script src="auth.js"></script>
+<script src="carrito.js"></script>
+<script>
+// Script específico para checkout
+document.addEventListener('DOMContentLoaded', () => {
+  const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  const orderItems = document.getElementById('order-items');
+  const summarySubtotal = document.getElementById('summary-subtotal');
+  const summaryTotal = document.getElementById('summary-total');
+  const checkoutForm = document.getElementById('checkout-form');
+  const btnConfirmar = document.getElementById('btn-confirmar');
+  const paymentFields = document.getElementById('tarjeta-fields');
+
+  if (!checkoutForm || !btnConfirmar) return;
+
+  const paymentNotice = document.createElement('p');
+  paymentNotice.className = 'payment-notice';
+  paymentNotice.style.marginTop = '0.75rem';
+  paymentNotice.style.color = 'var(--color-gris-medio)';
+  paymentNotice.textContent = 'Introduce los datos de tu tarjeta para pagar con tarjeta.';
+  paymentFields.parentNode.insertBefore(paymentNotice, paymentFields.nextSibling);
+
+  function setRequiredCardFields(required) {
+    ['numero-tarjeta', 'fecha-exp', 'cvv'].forEach(id => {
+      const field = document.getElementById(id);
+      if (field) field.required = required;
+    });
+  }
+
+  // Cargar resumen del pedido
+  function loadOrderSummary() {
+    orderItems.innerHTML = '';
+    let subtotal = 0;
+    carrito.forEach(item => {
+      const itemTotal = item.precio * item.cantidad;
+      subtotal += itemTotal;
+      const div = document.createElement('div');
+      div.className = 'order-item';
+      div.innerHTML = `
+        <img src="${item.imagen}" alt="${item.nombre}" class="order-item-img">
+        <div class="order-item-info">
+          <div class="order-item-name">${item.nombre}</div>
+          <div class="order-item-details">${item.pack} × ${item.cantidad}</div>
+        </div>
+        <div class="order-item-price">${itemTotal.toFixed(2)}€</div>
+      `;
+      orderItems.appendChild(div);
+    });
+    summarySubtotal.textContent = subtotal.toFixed(2) + '€';
+    summaryTotal.textContent = subtotal.toFixed(2) + '€';
+  }
+
+  loadOrderSummary();
+
+  function updatePaymentUI(method) {
+    if (method === 'tarjeta') {
+      paymentFields.style.display = 'block';
+      paymentNotice.textContent = 'Introduce los datos de tu tarjeta para pagar con tarjeta.';
+      setRequiredCardFields(true);
+    } else {
+      paymentFields.style.display = 'none';
+      setRequiredCardFields(false);
+      paymentNotice.textContent = method === 'paypal'
+        ? 'Serás redirigido a PayPal al confirmar el pedido.'
+        : 'Te enviaremos los datos de la transferencia después de confirmar el pedido.';
+    }
+  }
+
+  document.querySelectorAll('input[name="pago"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      updatePaymentUI(radio.value);
+    });
+  });
+
+  updatePaymentUI(document.querySelector('input[name="pago"]:checked')?.value || 'tarjeta');
+
+  // Validación y envío del formulario
+  checkoutForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (carrito.length === 0) {
+      showToast('Tu carrito está vacío', '⚠️');
+      return;
+    }
+    // Simular procesamiento
+    btnConfirmar.textContent = 'Procesando…';
+    btnConfirmar.disabled = true;
+    setTimeout(() => {
+      // Vaciar carrito
+      localStorage.setItem('carrito', JSON.stringify([]));
+      const cartCount = document.getElementById('cart-count');
+      if (cartCount) {
+        cartCount.textContent = '0';
+        cartCount.classList.remove('visible');
+      }
+      if (typeof updateCartCount === 'function') updateCartCount();
+      showToast('¡Pedido confirmado! Recibirás un email de confirmación 🎉', '✅');
+      // Redirigir a página de éxito o inicio
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 2000);
+    }, 2000);
+  });
+});
+</script>
+</body>
+</html>
